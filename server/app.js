@@ -5,16 +5,13 @@ const env = require("dotenv").config();
 
 const port = process.env.PORT || 5000
 
-
-
 const router = require("./routes/routes-vincula")
 app.use("/api", router)
 
+
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(_dirname+'/client/build/index.html'))
+    res.sendFile(path.join('../client/build/index.html'))
 })
-
-
 
 
 app.listen(port, () => {
