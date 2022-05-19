@@ -1,0 +1,12 @@
+{
+  "engines": {
+    "node": "17.9.0",
+    "npm": "8.5.5"
+  },
+  "name": "vincula-root",
+  "version": "1.0.0",
+  "description": "Vincula project ",
+
+  "author": "Alex de la Orden, Pedro Rodríguez & Irene García",
+  "license": "ISC"
+}
