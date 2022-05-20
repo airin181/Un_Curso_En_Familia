@@ -30,7 +30,7 @@ jobs:
         run: git remote add heroku-back https://git.heroku.com/vincula-back.git
 
       - name: Add file 
-        run: echo "machine api.heroku.com\n  login ${ secrets.HEROKU_EMAIL }\n  password ${ secrets.HEROKU_API_KEY }\nmachine git.heroku.com\n  login ${ secrets.HEROKU_EMAIL }\n  password ${ secrets.HEROKU_API_KEY }" >> ~/.netrc
+        run: echo "machine api.heroku.com\n  login ${{ secrets.HEROKU_EMAIL }}\n  password ${{ secrets.HEROKU_API_KEY }}\nmachine git.heroku.com\n  login ${{ secrets.HEROKU_EMAIL }}\n  password ${{ secrets.HEROKU_API_KEY }}" >> ~/.netrc
 
       # Runs a single command using the runners shell
       - name: Deploy front to Heroku
