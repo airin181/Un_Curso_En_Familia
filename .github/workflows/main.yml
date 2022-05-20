@@ -23,6 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Add remote front
+        run: git remote add heroku-front https://git.heroku.com/vincula-front.git
+
+      - name: Add remote back
+        run: git remote add heroku-back https://git.heroku.com/vincula-back.git
+
+      - name: Add file 
+        run: echo "machine api.heroku.com\n  login ${ secrets.HEROKU_EMAIL }\n  password ${ secrets.HEROKU_API_KEY }\nmachine git.heroku.com\n  login ${ secrets.HEROKU_EMAIL }\n  password ${ secrets.HEROKU_API_KEY }" >> ~/.netrc
+
       # Runs a single command using the runners shell
       - name: Deploy front to Heroku
         run: make deploy-front
