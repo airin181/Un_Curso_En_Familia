@@ -1,11 +1,15 @@
 {
+  "engines": {
+    "node": "17.9.0",
+    "npm": "8.5.5"
+  },
   "name": "vincula",
   "version": "1.0.0",
   "description": "Vincula project ",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
