@@ -1,0 +1,29 @@
+{
+  "engines": {
+    "node": "17.9.0",
+    "npm": "8.5.5"
+  },
+  "name": "vincula",
+  "version": "1.0.0",
+  "description": "Vincula project ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pedromrv/vincula.git"
+  },
+  "author": "Alex de la Orden, Pedro Rodríguez & Irene García",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pedromrv/vincula/issues"
+  },
+  "homepage": "https://github.com/Pedromrv/vincula#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
