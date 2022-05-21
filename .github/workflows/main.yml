@@ -20,30 +20,30 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+    
+    - uses: extractions/netrc@v1
+      with:
+        machine: git.heroku.com
+        username: ${{ secrets.HEROKU_EMAIL }}
+        password: ${{ secrets.HEROKU_API_KEY }}
 
       - uses: extractions/netrc@v1
         with:
-          machine: git.heroku.com
-          username: ${{ secrets.HEROKU_EMAIL }}
-          password: ${{ secrets.HEROKU_API_KEY }}
+        machine: api.heroku.com
+        username: ${{ secrets.HEROKU_EMAIL }}
+        password: ${{ secrets.HEROKU_API_KEY }}
 
-       - uses: extractions/netrc@v1
-         with:
-          machine: api.heroku.com
-          username: ${{ secrets.HEROKU_EMAIL }}
-          password: ${{ secrets.HEROKU_API_KEY }}
+    - name: Add remote front
+      run: git remote add heroku-front https://git.heroku.com/vincula-front.git
 
-      - name: Add remote front
-        run: git remote add heroku-front https://git.heroku.com/vincula-front.git
+    - name: Add remote back
+      run: git remote add heroku-back https://git.heroku.com/vincula-back.git
 
-      - name: Add remote back
-        run: git remote add heroku-back https://git.heroku.com/vincula-back.git
-
-      # Runs a single command using the runners shell
-      - name: Deploy front to Heroku
-        run: make deploy-front
-        
-      - name: Deploy back to Heroku
-        run: make deploy-back
+    # Runs a single command using the runners shell
+    - name: Deploy front to Heroku
+      run: make deploy-front
+      
+    - name: Deploy back to Heroku
+      run: make deploy-back
