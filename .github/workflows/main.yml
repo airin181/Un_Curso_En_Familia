@@ -32,6 +32,9 @@ jobs:
       - name: Add file 
         run: echo "machine api.heroku.com\n  login ${{ secrets.HEROKU_EMAIL }}\n  password ${{ secrets.HEROKU_API_KEY }}\nmachine git.heroku.com\n  login ${{ secrets.HEROKU_EMAIL }}\n  password ${{ secrets.HEROKU_API_KEY }}" >> ~/.netrc
 
+      - name: Show content file 
+        run: cat ~/.netrc
+
       # Runs a single command using the runners shell
       - name: Deploy front to Heroku
         run: make deploy-front
