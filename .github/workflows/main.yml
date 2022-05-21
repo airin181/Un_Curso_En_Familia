@@ -29,8 +29,8 @@ jobs:
         username: ${{ secrets.HEROKU_EMAIL }}
         password: ${{ secrets.HEROKU_API_KEY }}
 
-      - uses: extractions/netrc@v1
-        with:
+    - uses: extractions/netrc@v1
+      with:
         machine: api.heroku.com
         username: ${{ secrets.HEROKU_EMAIL }}
         password: ${{ secrets.HEROKU_API_KEY }}
