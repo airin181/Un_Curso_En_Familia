@@ -1,0 +1,17 @@
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 1em;
+    margin-right: 1em;
+
+
+    & span {
+
+        width: 23px;
+        height: 2px;
+        background-color: black;
+        display: block;
+        margin: 2px;
+    }
+}

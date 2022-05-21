@@ -1,7 +1,12 @@
 import React from "react";
+import Intro from './Intro/Intro'
 
 const Home = () => {
-  return <div>YA FUNCIONA</div>;
+  return <>
+  
+  <Intro/>
+  </>
+  ;
 };
 
 export default Home;

@@ -1,0 +1,48 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.div-general-intro {
+    background-color: $primary-m4;
+   @include column-center;
+   justify-content: none;
+   height: 100vh;
+}
+
+.title{
+text-align: center;
+margin: 2em;
+
+& .h1-b{
+    margin: 0;
+    @include h1-b;
+}
+}
+
+.subtext{
+    @include body2-s; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin:2em;
+}
+
+.caption{
+    //styleName: Caption/Extra Small Text Semibold;
+font-family: Poppins;
+font-size: 12px;
+font-weight: 600;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+margin: 0;
+}
+
+#logo-intro {
+    width: 80px;
+    height: 64px;
+    margin-top: 7em;
+}
+
+.arrow_downward-section{
+@include arrow_downward-section;
+}
