@@ -11,39 +11,15 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
-    
-    - uses: extractions/netrc@v1
-      with:
-        machine: git.heroku.com
-        username: ${{ secrets.HEROKU_EMAIL }}
-        password: ${{ secrets.HEROKU_API_KEY }}
-
-    - uses: extractions/netrc@v1
-      with:
-        machine: api.heroku.com
-        username: ${{ secrets.HEROKU_EMAIL }}
-        password: ${{ secrets.HEROKU_API_KEY }}
-
-    - name: Add remote front
-      run: git remote add heroku-front https://git.heroku.com/vincula-front.git
-
-    - name: Add remote back
-      run: git remote add heroku-back https://git.heroku.com/vincula-back.git
-
-    # Runs a single command using the runners shell
-    - name: Deploy front to Heroku
-      run: make deploy-front
-      
-    - name: Deploy back to Heroku
-      run: make deploy-back
+      - uses: actions/checkout@v2
+      - uses: client/heroku-deploy@v3.12.12 # This is the action
+      - uses: server/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          appdir: "api" # <- This will point to the api folder in your project
