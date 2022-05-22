@@ -1,14 +1,22 @@
 require('dotenv').config();
+
 const path = require('path');
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 const router = require("./routes/routes-vincula");
 const mongoDBConnection = require('./config/mongodbConfig');
 
-app.use("/api", router)
+const cors = require('cors');
+
+app.use("/api", router);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(cors());
 
 
 const init = async () => {
