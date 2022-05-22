@@ -11,10 +11,9 @@ const mongoDBConnection = require('./config/mongodbConfig');
 
 const cors = require('cors');
 
-app.use("/api", router);
-
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/api", router);
 
 app.use(cors());
 

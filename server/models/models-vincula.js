@@ -10,7 +10,12 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
         trim: true
+    },
+    password: {
+        type: String,
+        default: undefined
     },
     tlf: {
         type: Number,
@@ -23,10 +28,14 @@ const userSchema = mongoose.Schema({
         trim: true
     },
     zip_code: {
-        type: Number,
+        type: String,
         required: true,
         trim: true
+    },
+    logged: {
+        type: Boolean,
+        default: false
     }
- })
+ });
 
 let User = module.exports = mongoose.model('User', userSchema);
