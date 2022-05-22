@@ -18,7 +18,7 @@ const Intro = () => {
       </div>
     </article>
 
-    <article className="arrow_downward-section">
+    <article className="arrow_downward-intro">
       <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward"/>
     </article>
 
