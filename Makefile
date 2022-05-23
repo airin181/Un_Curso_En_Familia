@@ -3,4 +3,3 @@ deploy-front:
 
 deploy-back:
 	git push heroku-back `git subtree split --prefix server deploy`:refs/heads/master
-	
