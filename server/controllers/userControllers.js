@@ -1,11 +1,9 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const jwt_secret = process.env.ULTRA_SECRET_KEY;
-const UserData = require('../models/userDataModel');
 const User = require('../models/userModel');
 
 // Users
-
 const getAllUsers = async (req, res) => {
     let users;
     try {
@@ -22,10 +20,6 @@ const createUser = async (req, res) => {
     try {
         User.create({ "email": email, "password": hashedPassword, "logged": false });
         res.status(201).json({ msg: "New user saved " + email });
-        /* newUser.save((err, newUser) => {
-            err ? console.log(err) : console.log(`${newUser.name} saved in the Users collection!`)
-        });
-        res.status(201).json({msg: "New user saved" + req.body}); */
     } catch (error) {
         res.status(400).json({ msg: `error ${err}` });
     }
@@ -71,27 +65,11 @@ const logoutUser = async (req, res) => {
     }
 }
 
-
-/* const sendForm = async (req, res) => {
-    const { name, email, tlf, address, zip_code } = req.body;
-    try {
-        UserData.create({ "name": name, "email": email, "tlf": tlf, "address": address, "zip_code": zip_code });
-        res.status(201).json({ msg: "New user data saved " + name });
-        newUser.save((err, newUser) => {
-            err ? console.log(err) : console.log(`${newUser.name} saved in the Users collection!`)
-        });
-        res.status(201).json({msg: "New user saved" + req.body});
-    } catch (error) {
-        res.status(400).json({ msg: `error ${err}` });
-    }
-}; */
-
 userControllers = {
     getAllUsers,
     createUser,
     loginUser,
     logoutUser
-    /* sendForm */
 }
 
 module.exports = userControllers;
