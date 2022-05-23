@@ -10,10 +10,21 @@ import Card from './Card/Card'
 
 const Testimonies = () => {
 
+//====================
+//** Estados: **
+//====================
 
   const [main, setMain] = useState("https://www.youtube.com/embed/0qX3UWsmc-8");
   const [image, setImage] = useState(""); 
   const [video, setVideo] = useState(true); 
+
+
+
+//====================
+//** Funciones: **
+//====================
+
+
 
 //si se hace click en una de las imágenes, el estado video pasa a false y se muestra imagen en grande
   const imageClick = (e) => {
@@ -27,9 +38,14 @@ const Testimonies = () => {
     setImage("")
   }
 
+  //flecha que hace scroll hasta la siguiente sección
+  const scrollToNext = () => {
+    window.scrollTo({
+      top:(0, 1920),
+      behavior: 'smooth'
+    });
+  };
 
-
-// ::::::::::::::
 
 
 const arrayPrejudices = [
@@ -50,14 +66,16 @@ const arrayPrejudices = [
   }
 ]
 
-
+//por cada objeto del array (prejuicio) sacamos una Card
 const paintCards = () => {
   return arrayPrejudices.map((item, i) => <Card data={item} key={i}/>)
 }
 
 
 
-
+//====================
+//** RETURN: **
+//====================
 
 
   return <section className="general-testimonies">
@@ -103,7 +121,7 @@ const paintCards = () => {
       </div>
  
     <article className="arrow_downward-testimonies">
-      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
     </article>
 
 </div>

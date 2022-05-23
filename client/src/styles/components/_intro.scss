@@ -48,8 +48,10 @@
 
 
 .general-intro {
-    background-color: $primary-m4;
+    background-color: #F5F2ED;
+    ;
     @include column-center;
+    justify-content: space-around;
     height: 100vh;
 }
 
