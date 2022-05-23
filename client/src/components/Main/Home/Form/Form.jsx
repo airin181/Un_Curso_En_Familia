@@ -5,19 +5,7 @@ const Form = () => {
   const {register, handleSubmit} = useForm();
 
   const onSubmit = async (data) => {
-
-    const obj = {
-      colegio: data.colegio,
-      comaut: data.comaut,
-      provincia: data.Provincia,
-      nombre: data.nombre,
-      apellidos: data.apellidos,
-      email: data.email,
-      telefono: data.telefono,
-      puesto: data.puesto
-    };
-
-    console.log(obj, "esto es obj");
+    console.log(data)
   };
 
   return (
@@ -32,89 +20,90 @@ const Form = () => {
           </div>
           <div className="firstform">
             <label>Nombre y apellidos</label>
-            <input type="text" {...register("namesur")} name="namesur" placeholder="Nombre y Apellidos"
+            <input type="text" {...register("namesur")} placeholder="Nombre y Apellidos"
                    required/>
             <label>Email</label>
             <input type="text" name="email" {...register("email")} placeholder="correo@email.com" required/>
             <label>Teléfono de contacto</label>
-            <input type="number" {...register("telephone")} name="telephone" placeholder="600 000 000" required/>
+            <input type="number" {...register("telephone")}  placeholder="600 000 000" required/>
             <label>Dirección</label>
-            <input type="text" {...register("address")} name="address" placeholder="address" required/>
+            <input type="text" {...register("address")} placeholder="address" required/>
             <label>Código Postal</label>
-            <input type="number" {...register("postalcode")} name="postalcode" placeholder="postalcode" required/>
+            <input type="number" {...register("postalcode")}  placeholder="postalcode" required/>
           </div>
 
           <div className="secondform">
             <h3>¿Has tenido contacto previo con niños o addolescentes bajo medidas de protección?</h3>
+
             <label>
               <input
+                  {...register("previouscontact")}
                   name="fosterfamily"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="Famila de acogida idónea"
               />
               Soy una familia acojedora con idoneidad
             </label>
             <label>
               <input
+                  {...register("previouscontact")}
                   name="formerfosterfamily"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="He sido familia acogedora con idoneidad hace tiempo"
               />
               He sido familia acogedora con idoneidad hace tiempo
             </label>
             <label>
               <input
-                  name="holidayfostering"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="He participado en programas de acogimiento vacacional"
               />
               He participado en programas de acogimiento vacacional
             </label>
             <label>
               <input
-                  name="knowfostercare"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="Conozco el acogimiento familiar a través de personas de mi entorno que han acogido"
               />
               Conozco el acogimiento familiar a través de personas de mi entorno que han acogido
             </label>
             <label>
               <input
-                  name="volunteer"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="Colaboro como voluntario/a en una residencia infantil"
               />
               Colaboro como voluntario/a en una residencia infantil
             </label>
             <label>
               <input
-                  name="program&activities"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="He participado en programas y actividades puntuales con menores en acogimiento residencial"
               />
               He participado en programas y actividades puntuales con menores en acogimiento residencial
             </label>
             <label>
               <input
-                  name="zerocontact"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="No he tenido contacto previo"
               />
               No he tenido contacto previo
             </label>
             <label>
               <input
-                  name="othersecondform"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("previouscontact")}
+                  name="formerfosterfamily"
+                  type="radio"
+                  value="Otro:"
               />
               Otro:
             </label>
@@ -126,19 +115,25 @@ const Form = () => {
             <label>¿Tienes hijos?</label>
             <label>
               <input
+                  {...register("havesons")}
                   name="yes"
-                  type="checkbox"/>
+                  type="radio"
+                  value="si"
+              />
               Si
             </label>
             <label>
               <input
+                  {...register("havesons")}
                   name="no"
-                  type="checkbox"/>
+                  type="radio"
+                  value="no"
+              />
               No
             </label>
             <label>Si procede, edad y sexo/género de los niños/as o adolescentes que forman parte de tu núcleo
               de convivencia</label>
-            <input type="" {...register("agesex")} name="agesex" placeholder="10 años, mujer" required/>
+            <input type="" {...register("agesex")} placeholder="10 años, mujer" required/>
           </div>
 
           <div className="fourthform">
@@ -150,67 +145,67 @@ const Form = () => {
             <label>¿Tienes relación con algún menor en concreto?</label>
             <h5>Si es así indica nombre, residencia, a qué se debe la relación y el tiempo que hace que os
               conocéis</h5>
-            <input type="text" name="relationship" {...register("relationship")} placeholder="Si/No" required/>
+            <input type="text" {...register("relationship")} placeholder="Si/No" />
           </div>
 
           <div className="fifthform">
             <h3>¿Cómo has conocido el proyecto?*</h3>
             <label>
               <input
+                  {...register("proyectknowledge")}
                   name="dgi"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="Dirección General de Infancia, Familias y fomento de la Natalidad"
               />
               Dirección General de Infancia, Familias y fomento de la Natalidad
             </label>
             <label>
               <input
+                  {...register("proyectknowledge")}
                   name="aseaf"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="ASEAF"
               />
               ASEAF
             </label>
             <label>
               <input
-                  name="fosterfamilies"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("proyectknowledge")}
+                  name="fpla"
+                  type="radio"
+                  value="Familias Para la Acogida"
               />
               Familias Para la Acogida
             </label>
             <label>
               <input
+                  {...register("proyectknowledge")}
                   name="adamcam"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="ADAMCAM"
               />
               ADAMCAM
             </label>
             <label>
               <input
+                  {...register("proyectknowledge")}
                   name="trust"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  type="radio"
+                  value="Fundación Soñar Despierto"
               />
               Fundación Soñar Despierto
             </label>
             <label>
               <input
-                  name="otherfifthform"
-                  type="checkbox"
-                  // checked={this.state.isGoing}
-                  // onChange={this.handleInputChange}
+                  {...register("proyectknowledge")}
+                  name="another"
+                  type="radio"
+                  value="otro"
               />
               Otro:
             </label>
             <h3>¿Tienes alguna duda concreta sobre el proyecto?</h3>
-            <input type="text" {...register("doubt")} name="doubt" placeholder="Escribe aquí..." required/>
+            <input type="text" {...register("doubt")}  placeholder="Escribe aquí..." required/>
           </div>
           <div className="endingpage">
             <h2 className="titulo">¡Solicitud completada</h2>
@@ -220,6 +215,7 @@ const Form = () => {
             <h3>¡Gracias por implicarte!</h3>
           </div>
         </div>
+        <input type="submit"/>
       </form>);
 };
 
