@@ -1,25 +1,26 @@
-//models
+// Tendrá que actualizarse cuando Pedro acabe el esquema del modelo formulario
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const userDataSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        min: 5,
+        max: 100
     },
     email: {
         type: String,
         required: true,
         unique: true,
-        trim: true
-    },
-    password: {
-        type: String,
-        default: undefined
+        trim: true,
+        min: 5,
+        max: 100
     },
     tlf: {
-        type: Number,
+        type: String,
         required: true,
+        unique: true,
         trim: true
     },
     address: {
@@ -32,10 +33,10 @@ const userSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    logged: {
-        type: Boolean,
-        default: false
+    date: {
+        type: Date,
+        default: Date.now
     }
  });
 
-let User = module.exports = mongoose.model('User', userSchema);
+let UserData = module.exports = mongoose.model('UserData', userDataSchema);
