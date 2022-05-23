@@ -7,6 +7,22 @@ import illustration3 from './../../../../assets/illustration3.svg';
 import illustration4 from './../../../../assets/illustration4.svg';
 
 const Objectives = () => {
+
+
+//====================
+//** Funciones: **
+//====================
+
+  //flecha que hace scroll hasta la siguiente sección
+  const scrollToNext = () => {
+    window.scrollTo({
+      top:(0, 2220),
+      behavior: 'smooth'
+    });
+  };
+
+
+
   return <>
     <section className="general-objectives">
       <article style={{width:"100%"}}>
@@ -46,7 +62,7 @@ const Objectives = () => {
 
 
       <article className="arrow_downward-objectives">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
       </article>
     </section>
   </>;

@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow_downward from './../../../../assets/arrow_downward.svg';
 import formas1 from './../../../../assets/formas1.svg';
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 import attach_icon from './../../../../assets/attach_email.svg';
 import family_icon from './../../../../assets/family_restroom.svg';
+import Popup from "./Popup/Popup";
 
 const Program = () => {
+
+
+  const scrollToNext = () => {
+    window.scrollTo({
+      top:(0, 1420),
+      behavior: 'smooth'
+    });
+  };
+
   return <>
     <section className="general-program">
       <article>
@@ -27,14 +37,14 @@ const Program = () => {
         </div>
 
         <div className="buttons-program">
-          <button><img src={attach_icon} alt="Attached file icon" /> Programa completo</button>
-          <button id="participa-button"><img src={family_icon} alt="Family icon" />¡Participa</button>
+        <Popup/>
+          <button id="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
         </div>
 
       </article>
 
       <article className="arrow_downward-program">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
       </article>
     </section>
   </>;
