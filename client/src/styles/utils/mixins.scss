@@ -96,16 +96,3 @@ text-align: left;
 
 }
 
-
-@mixin arrow_downward-section{
-    margin-bottom: 1em;
-    bottom: 0;
-    position: absolute;
-
-    & img{
-
-        width:24px;
-        height:24px;
-    }
-
-}
