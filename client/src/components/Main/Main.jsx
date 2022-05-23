@@ -4,11 +4,11 @@ import Home from './Home/Home'
 
 
 const Main = () => {
-  return <div>
+  return <main>
     <Routes>
     <Route element={<Home/>} path='/'/>
-       </Routes>
-  </div>;
+    </Routes>
+  </main>;
 };
 
 export default Main;

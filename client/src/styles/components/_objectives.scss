@@ -1,0 +1,149 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.general-objectives {
+    background-color: #EFF7EF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.title-objectives {
+    height: 21%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 1.7em;
+    padding-top: 4em;
+    flex-direction: column;
+    border-bottom-left-radius: 50px;
+
+    & .text-title-objectives {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        margin: 0em 2em 0em 2em;
+        padding: 0 5em 0 0em;
+        color: #35312E;
+    }
+
+    & figure {
+        margin-bottom: 3px;
+    }
+
+}
+
+.cards-objectives{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.card-1 {
+    display: flex;
+    flex-direction: row;
+    background: #FEFEFC;
+    box-shadow: 0px 2px 6px rgb(0 0 0 / 10%);
+    border-radius: 100px 0px 0px 100px;
+    margin: 0 0 0 1em;
+    height: 112px;
+    justify-content: space-between;
+    align-items: center;
+
+ & div{
+    margin-right: 1.5em;
+    display: flex;
+    left: -5px;
+
+    & p{
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: right;
+        color: #35312E;
+    }
+ }
+    & figure{
+        margin: 0;
+        margin: 0;
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+
+        & img{
+            margin-left: 21px;
+            display: flex;
+            align-items: flex-end;
+            align-content: flex-end;
+            height: 93px;
+            width: 86.69px;
+        }
+    }
+}
+
+
+
+
+.card-2 {
+    display: flex;
+    flex-direction: row;
+    background: #FEFEFC;
+    box-shadow: 0px 2px 6px rgb(0 0 0 / 10%);
+    border-radius: 0px 100px 100px 0px;
+    height: 112px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5em 0 1.5em 0;
+    width: 95%;
+
+ & div{
+    margin-left: 2em;
+    display: flex;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    min-width: 290px;
+
+    & p{
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: left;
+        color: #35312E;
+    }
+ }
+
+
+        & img{
+            z-index: 1;
+            position: relative;
+            right: 2.5em;
+            top: 1.5em;
+            margin: 5px;
+        
+        }
+    
+}
+
+
+
+// >>>>>>>>>>>>>>>
+
+.arrow_downward-objectives{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    width: 24px;
+height: 24px;
+
+}
