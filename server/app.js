@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/api", router);
 
-
 const init = async () => {
   try {
       await mongoDBConnection();
