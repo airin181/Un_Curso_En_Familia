@@ -74,9 +74,10 @@
     overflow: hidden;
     border-radius: 50%;
 }
-.circular--landscape img {     
+
+.circular--landscape img {
     width: auto;
-    height: 100%; 
+    height: 100%;
 }
 
 
@@ -93,15 +94,45 @@
     & img:hover {
         transform: scale(1.1);
     }
-} 
+}
+
+
+
+
+
+
+.scrolling-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    margin-left: 1em;
+    overflow-x: scroll;
+}
+
+
+.cards-arrow-testimonies{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: #BDD2C2;
+    display: flex;
+    overflow: hidden;
+}
+
+
+
 
 
 
 .arrow_downward-testimonies {
-    width: 100%;
+
     display: flex;
     justify-content: center;
-    padding: 2em;
+    padding: 1em 0 2em 0;
     width: 24px;
     height: 24px;
+
 }
