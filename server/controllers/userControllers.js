@@ -17,11 +17,16 @@ const getAllUsers = async (req, res) => {
 const createUser = async (req, res) => {
     const { email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    try {
-        User.create({ "email": email, "password": hashedPassword, "logged": false });
-        res.status(201).json({ msg: "New user saved " + email });
-    } catch (error) {
-        res.status(400).json({ msg: `error ${err}` });
+    const user = await User.findOne({ "email": email })
+    if (!user) {
+        try {
+            User.create({ "email": email, "password": hashedPassword, "logged": false });
+            res.status(201).json({ msg: "New user saved " + email });
+        } catch (error) {
+            res.status(400).json({ msg: `error ${err}` });
+        }
+    } else {
+        res.status(400).json({ msg: "User already in database!" })
     }
 };
 
@@ -59,7 +64,7 @@ const logoutUser = async (req, res) => {
     let data;
     try {
         data = await User.updateOne({ email: req.params.email }, { logged: false });
-        res.status(200).json({msg: 'Token deleted'})
+        res.status(200).json({ msg: 'Token deleted' })
     } catch (error) {
         console.log('Error:', error);
     }
