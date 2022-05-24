@@ -42,7 +42,7 @@ jobs:
       run: git remote add heroku-back https://git.heroku.com/vincula-back.git
       
     - name: NET RC
-      run: cat ~/.netrc
+      run: heroku
     
     # Runs a single command using the runners shell
     - name: Deploy front to Heroku
