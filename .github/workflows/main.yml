@@ -11,6 +11,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }} 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -22,25 +24,13 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
-    
-    - uses: extractions/netrc@v1
-      with:
-        machine: git.heroku.com
-        username: ${{ secrets.HEROKU_EMAIL }}
-        password: ${{ secrets.HEROKU_API_KEY }}
-
-    - uses: extractions/netrc@v1
-      with:
-        machine: api.heroku.com
-        username: ${{ secrets.HEROKU_EMAIL }}
-        password: ${{ secrets.HEROKU_API_KEY }}
 
     - name: Add remote front
       run: git remote add heroku-front https://git.heroku.com/vincula-front.git
 
     - name: Add remote back
       run: git remote add heroku-back https://git.heroku.com/vincula-back.git
-
+    
     # Runs a single command using the runners shell
     - name: Deploy front to Heroku
       run: make deploy-front
