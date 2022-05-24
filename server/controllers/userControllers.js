@@ -6,7 +6,6 @@ const User = require('../models/userModel');
 const regex = require('../utils/regex')
 
 // Users
-
 const createUser = async (req, res) => {
     const { email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
