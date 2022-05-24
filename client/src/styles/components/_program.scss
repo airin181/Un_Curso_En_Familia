@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 816px;
     justify-content: space-between;
 
     & article {
@@ -65,7 +65,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 0 2.7em 0 2.7em;
+    margin: 1em 2.7em 1em 2.7em;
 
     & img {
         margin-right: 5px;
@@ -84,7 +84,7 @@
 
 .buttons-program {
     @include column-center;
-    margin-top: 3em;
+    margin-top: 2em;
 
     & button {
         display: flex;
@@ -104,19 +104,20 @@
         font-size: 14px;
         line-height: 130%;
         top: 1400px;
-
-
         display: flex;
         align-items: center;
-
         color: #596B61;
-
         flex: none;
         order: 1;
         flex-grow: 0;
+        cursor: pointer;
     }
 
-    & #participa-button {
+    & button:hover {
+        opacity: 0.6;
+      }
+
+    & .participa-button {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -129,31 +130,17 @@
         height: 40px;
         left: 80px;
         top: 1456px;
-
-        /* Primario/Primario */
-
         background: #F0985E;
         border-radius: 100px;
-
         margin: 1em;
-
         font-family: $font;
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
         line-height: 130%;
-        /* or 18px */
-        
         display: flex;
         align-items: center;
-        
-        /* Neutros/Neutro 05 */
-        
-        color: #FEFEFC;
-        
-        
-        /* Inside auto layout */
-        
+        color: #FEFEFC; 
         flex: none;
         order: 1;
         flex-grow: 0;

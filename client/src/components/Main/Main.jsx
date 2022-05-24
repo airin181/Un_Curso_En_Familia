@@ -4,7 +4,7 @@ import Home from './Home/Home'
 
 
 const Main = () => {
-  return <main>
+  return <main style={{overflow: "hidden", position: "relative"}}>
     <Routes>
     <Route element={<Home/>} path='/'/>
     </Routes>
