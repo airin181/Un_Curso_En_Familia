@@ -11,7 +11,7 @@ const GetInvolved = () => {
 
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 1632),
+      top:(0, 0),
       behavior: 'smooth'
     });
   };
@@ -32,7 +32,7 @@ const GetInvolved = () => {
         </div>
 
         <div className="body-getinvolved">
-          <p>Si estás interesado en participar en nuestro programa y ayudar a un menor puedes contactarnos al +34 633 738 461 para obtener más información y resolver tus dudas. </p>
+          <p>Si estás interesado en participar en nuestro programa y ayudar a un menor puedes contactarnos al <mark className="orange"><b>+34 633 738 461</b></mark> para obtener más información y resolver tus dudas. </p>
           <p>Si quieres participar en el programa del próximo curso, ¡inscríbete!</p>
           <div className="link-to-more-info">
             <img src={arrow_circle} alt="Arrow with circle" />
@@ -44,6 +44,11 @@ const GetInvolved = () => {
         <div className="buttons-getinvolved">
           <button className="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
         </div>
+
+          <blackquote className="quote-div">
+            <p className="quote-text">«Los vínculos no los da la sangre. Conocimos la necesidad de los niños tutelados y nos decidimos por la acogida.»</p>
+            <p className="quote-author">- Familia perteneciente al programa</p>
+          </blackquote>
 
       </article>
 
