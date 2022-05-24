@@ -141,11 +141,11 @@ const Testimonies = () => {
       </div>
 
 
+
+    </article>
       <article className="arrow_downward-testimonies">
         <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
       </article>
-
-    </article>
 
 
   </section>
