@@ -5,12 +5,11 @@ import Program from './Program/Program'
 
 const Home = () => {
   return <>
-  
-  <Intro/>
-  <Program/>
-  <Objectives/>
-  </>
-  ;
+
+    <Intro />
+    <Program />
+    <Objectives />
+  </>;
 };
 
 export default Home;

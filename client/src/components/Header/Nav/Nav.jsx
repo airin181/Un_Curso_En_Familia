@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 
 
 const Nav = () => {
-  return <div className="burger-menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+  return (
+    <div className="burger-menu">
+      <Link to='/login'>Área de miembros</Link>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    )
+
 
 {/*   <Link to='/#'>El programa</Link>
   <Link to='/#'>Testimonios</Link>
