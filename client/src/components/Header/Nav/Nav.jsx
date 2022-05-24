@@ -5,6 +5,8 @@ import formas2 from './../../../assets/formas2.svg';
 import formas3 from './../../../assets/formas3.svg';
 import formas4 from './../../../assets/formas4.svg';
 
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -15,7 +17,7 @@ const Nav = () => {
 
 
     <div className="burger-menu">
-      <Hamburger toggled={isOpen} toggle={setOpen} className="hamburger-component"/>
+      <Hamburger toggled={isOpen} toggle={setOpen} id="hamburger-component" distance="sm" color="#35312E"/>
       {isOpen ?
         <div className="overlay">
           <ul >
@@ -29,7 +31,7 @@ const Nav = () => {
             </li>
             <li>
               <img src={formas3} alt="Forma" style={{width:"24px"}}/>
-              <p>Área miembros</p>
+              <Link to='/login'>Área de miembros</Link>
             </li>
             <li>
               <img src={formas4} alt="Forma" style={{width:"24px"}}/>
@@ -43,7 +45,6 @@ const Nav = () => {
     {isOpen ?
     <div className="dark-bg"></div>
   : ""}
-
   </>
 
   )

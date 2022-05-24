@@ -1,16 +1,12 @@
 const router = require('express').Router();
 const userControllers = require('../controllers/userControllers');
+const vinculaControllers= require('../controllers/vinculaControllers');
 
-router.get('/', userControllers.getAllUsers);
+// User routes
 router.post('/signup', userControllers.createUser);
 router.post('/login', userControllers.loginUser);
-router.get('/logout/:email', userControllers.logoutUser)
-// router.post('/form', userControllers.sendForm);
-router.get('/', (req, res) => {
-    res.json({msg: "Hello World SUUUUUUU"})
-})
-router.get('/inscripcion/create', (req, res) => {
-    res.json({msg: "Create inscrip"})
-})
+router.get('/logout/:email', userControllers.logoutUser);
+
+router.post('/create', vinculaControllers.createinscription);
 
 module.exports = router;

@@ -1,21 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import arrow_downward from './../../../../assets/arrow_downward.svg';
 import formas1 from './../../../../assets/formas1.svg';
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
-import attach_icon from './../../../../assets/attach_email.svg';
 import family_icon from './../../../../assets/family_restroom.svg';
 import Popup from "./Popup/Popup";
+
+import{ useRef } from 'react'
 
 const Program = () => {
 
 
+
+
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 1420),
+      top:(0, 1632),
       behavior: 'smooth'
     });
-  };
+  }; 
 
+/*   const myRef = useRef(null)
+   const executeScroll = () => scrollToRef(myRef)
+
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
+  ref={myRef} */
+
+
+  
   return <>
     <section className="general-program">
       <article>
@@ -32,19 +43,20 @@ const Program = () => {
           <p>El programa cuenta con una colaboración entre familias y centros de protección, para facilitar una experiencia en familia a los menores que residen en los centros, y ofrecer a ambas partes la oportunidad y experiencia de convivir durante el curso escolar.</p>
           <div className="link-to-more-info">
             <img src={arrow_circle} alt="Arrow with circle" />
-            <a href="">Conoce más sobre el proyecto</a>
+          {/*   // eslint-disable-next-line */}
+            <a href="#" >Conoce más sobre el proyecto</a>
           </div>
         </div>
 
         <div className="buttons-program">
         <Popup/>
-          <button id="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
+          <button className="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
         </div>
 
       </article>
 
       <article className="arrow_downward-program">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
       </article>
     </section>
   </>;
