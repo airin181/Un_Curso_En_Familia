@@ -3,6 +3,7 @@ import Intro from './Intro/Intro';
 import Objectives from "./Objectives/Objectives";
 import Program from './Program/Program'
 import Testimonies from './Testimonies/Testimonies'
+import GetInvolved from './GetInvolved/GetInvolved'
 
 const Home = () => {
   return <>
@@ -11,7 +12,7 @@ const Home = () => {
   <Program/>
   <Objectives/>
   <Testimonies/>
-
+<GetInvolved/>
   </>
   ;
 };

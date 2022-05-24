@@ -15,7 +15,7 @@ const Nav = () => {
 
 
     <div className="burger-menu">
-      <Hamburger toggled={isOpen} toggle={setOpen} className="hamburger-component"/>
+      <Hamburger toggled={isOpen} toggle={setOpen} id="hamburger-component" distance="sm" color="#35312E"/>
       {isOpen ?
         <div className="overlay">
           <ul >

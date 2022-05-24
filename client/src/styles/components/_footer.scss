@@ -1,21 +1,11 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.footer{
-    @include column-center
+.general-footer{
+    @include column-center;
+    background-color: #596B61;
+    color: white;
+    text-align: center;
 }
 
 
-/* .footer{
-    @include column-center;
-    background-color: $blue;
-    color: $white;
-    text-align: center;
-    left: 0;
-    font-family: $font2;
-    height: 34px;
-    margin: 0;
-    position:static;
-    bottom: 0;
-    width: 100%;
-} */
