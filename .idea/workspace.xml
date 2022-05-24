@@ -5,19 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c7e96da-da59-49d5-80fd-1612b6e687ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/vinculaControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/envelope1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/envelope2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/sent.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Main/Home/GetInvolved/GetInvolved.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Main/Home/GetInvolved/GetInvolved.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Main/Home/GetInvolved/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/components/_getinvolved.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/copy.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Nav/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Intro/Intro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Intro/Intro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Objectives/Objectives.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Objectives/Objectives.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Popup/Popup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Popup/Popup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Popup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Popup/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Program.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Program/Program.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Home/Testimonies/Testimonies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Home/Testimonies/Testimonies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_intro.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_intro.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_objectives.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_objectives.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_popup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_program.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_program.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/components/_testimonies.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/components/_testimonies.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/controllers-vincula.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/userDataModel.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/routes-vincula.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes-vincula.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/utils/MongoDb.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/MongoDb.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

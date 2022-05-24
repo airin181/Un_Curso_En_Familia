@@ -7,26 +7,27 @@ import img_video_3 from './../../../../assets/ph3.jpg';
 import img_video_4 from './../../../../assets/ph4.jpg';
 import screenshot from './../../../../assets/screenshot.png';
 import Card from './Card/Card'
+import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 
 const Testimonies = () => {
 
-//====================
-//** Estados: **
-//====================
+  //====================
+  //** Estados: **
+  //====================
 
   const [main, setMain] = useState("https://www.youtube.com/embed/0qX3UWsmc-8");
-  const [image, setImage] = useState(""); 
-  const [video, setVideo] = useState(true); 
+  const [image, setImage] = useState("");
+  const [video, setVideo] = useState(true);
 
 
 
-//====================
-//** Funciones: **
-//====================
+  //====================
+  //** Funciones: **
+  //====================
 
 
 
-//si se hace click en una de las imágenes, el estado video pasa a false y se muestra imagen en grande
+  //si se hace click en una de las imágenes, el estado video pasa a false y se muestra imagen en grande
   const imageClick = (e) => {
     setImage(e)
     setVideo(false)
@@ -41,41 +42,56 @@ const Testimonies = () => {
   //flecha que hace scroll hasta la siguiente sección
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 1920),
+      top: (0, 3264),
       behavior: 'smooth'
     });
   };
 
 
 
-const arrayPrejudices = [
-  {
-    id:1,
-    front:"¿Qué sucede si el menor tiene antecedentes familiares?",
-    back:"El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
-  },
-  {
-    id:2,
-    front:"¿Tienes que ser rico para poder acoger?",
-    back:"No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
-  },
-  {
-    id:3,
-    front:"¿Qué sucede si el menor tiene problemas de conducta?",
-    back:"Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+  const arrayPrejudices = [
+    {
+      id: 1,
+      front: "¿Qué sucede si el menor tiene antecedentes familiares?",
+      back: "El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
+    },
+    {
+      id: 2,
+      front: "¿Tienes que ser rico para poder acoger?",
+      back: "No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
+    },
+    {
+      id: 3,
+      front: "¿Qué sucede si el menor tiene problemas de conducta?",
+      back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+    },
+    {
+      id: 4,
+      front: "¿Qué sucede si el menor tiene antecedentes familiares?",
+      back: "El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
+    },
+    {
+      id: 5,
+      front: "¿Tienes que ser rico para poder acoger?",
+      back: "No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
+    },
+    {
+      id: 6,
+      front: "¿Qué sucede si el menor tiene problemas de conducta?",
+      back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+    }
+  ]
+
+  //por cada objeto del array (prejuicio) sacamos una Card
+  const paintCards = () => {
+    return arrayPrejudices.map((item, i) => <Card data={item} key={i} />)
   }
-]
-
-//por cada objeto del array (prejuicio) sacamos una Card
-const paintCards = () => {
-  return arrayPrejudices.map((item, i) => <Card data={item} key={i}/>)
-}
 
 
 
-//====================
-//** RETURN: **
-//====================
+  //====================
+  //** RETURN: **
+  //====================
 
 
   return <section className="general-testimonies">
@@ -113,20 +129,23 @@ const paintCards = () => {
         </div>
       </div>
 
-<div className="cards-arrow-testimonies">
-  
-
-      <div className="scrolling-wrapper">
-      {paintCards()}
+      <div className="link-to-more-info">
+        <img src={arrow_circle} alt="Arrow with circle" />
+        <a href="">Conoce más Testimonios</a>
       </div>
- 
-    <article className="arrow_downward-testimonies">
-      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
-    </article>
 
-</div>
+      <div className="cards-testimonies">
+        <div className="scrolling-wrapper">
+          {paintCards()}
+        </div>
+      </div>
+
+
 
     </article>
+      <article className="arrow_downward-testimonies">
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
+      </article>
 
 
   </section>

@@ -16,7 +16,7 @@ const Objectives = () => {
   //flecha que hace scroll hasta la siguiente sección
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 2220),
+      top:(0, 2448),
       behavior: 'smooth'
     });
   };
