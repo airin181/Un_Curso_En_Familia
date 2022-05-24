@@ -112,7 +112,7 @@
 }
 
 
-.cards-arrow-testimonies{
+.cards-testimonies{
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -125,7 +125,7 @@
 
 
 
-
+// >>>>>>>>>>>>>>> FLECHA SCROLL
 
 .arrow_downward-testimonies {
 
@@ -134,5 +134,7 @@
     padding: 1em 0 2em 0;
     width: 24px;
     height: 24px;
-
+    cursor: pointer;
+    width: 100%;
+    background-color: #BDD2C2;
 }

@@ -42,7 +42,7 @@ const Testimonies = () => {
   //flecha que hace scroll hasta la siguiente sección
   const scrollToNext = () => {
     window.scrollTo({
-      top: (0, 1920),
+      top: (0, 3264),
       behavior: 'smooth'
     });
   };
@@ -62,6 +62,21 @@ const Testimonies = () => {
     },
     {
       id: 3,
+      front: "¿Qué sucede si el menor tiene problemas de conducta?",
+      back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+    },
+    {
+      id: 4,
+      front: "¿Qué sucede si el menor tiene antecedentes familiares?",
+      back: "El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
+    },
+    {
+      id: 5,
+      front: "¿Tienes que ser rico para poder acoger?",
+      back: "No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
+    },
+    {
+      id: 6,
       front: "¿Qué sucede si el menor tiene problemas de conducta?",
       back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
     }
@@ -119,17 +134,16 @@ const Testimonies = () => {
         <a href="">Conoce más Testimonios</a>
       </div>
 
-      <div className="cards-arrow-testimonies">
-
+      <div className="cards-testimonies">
         <div className="scrolling-wrapper">
           {paintCards()}
         </div>
-
-        <article className="arrow_downward-testimonies">
-          <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-        </article>
-
       </div>
+
+
+      <article className="arrow_downward-testimonies">
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
+      </article>
 
     </article>
 

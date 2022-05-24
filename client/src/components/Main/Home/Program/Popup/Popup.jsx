@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import attach_icon from './../../../../../assets/attach_email.svg';
-import iconSent from './../../../../../assets/sent.svg';
+import iconSent from './../../../../../assets/sent.svg'; 
 
 
 
@@ -33,7 +33,7 @@ const Popup = () => {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const [emailTyped, setEmailTyped] = useState(false);
+  const [emailTyped, setEmailTyped] = useState("");
 
   const [invalidEmailMessage, setInvalidEmailMessage] = useState(false);
 
@@ -61,10 +61,22 @@ const Popup = () => {
       setSent(true)
       setInvalidEmailMessage(false)
       console.log("email válido");
+
     } else {
       setInvalidEmailMessage(true)
     }
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,11 +97,15 @@ const Popup = () => {
           </section>
 
           {!sent ? <>
+       
+            <div>
+              <div id="hubspotForm"></div>
+            </div>
             <section className="content-modal">
               <h3 className="h3-modal">Introduce tu email y te enviaremos el dossier del programa completo</h3>
 
               <article>
-                <input name="email" id="email-dossier" placeholder="Introduce tu email" onChange={handleInputChange} charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"/>
+                <input name="email" id="email-dossier" placeholder="Introduce tu email" onChange={handleInputChange} />
                 {invalidEmailMessage ? <p className="error-msg">E-mail inválido</p> : ""}
               </article>
 
@@ -103,11 +119,11 @@ const Popup = () => {
               <h3 className="h3-modal" id="h3-checkInbox">Revisa tu bandeja de entrada.</h3>
               <h3 className="h3-modal">¡Gracias por implicarte!</h3>
             </section>
-            }
+          }
 
 
-      </Box>
-    </Modal>
+        </Box>
+      </Modal>
     </div >
   );
 }

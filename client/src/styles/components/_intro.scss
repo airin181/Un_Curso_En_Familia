@@ -2,6 +2,11 @@
 @import '../utils/variables.scss';
 
 
+  //====================
+  //** Circulos fondo: **
+  //====================
+
+
 .circle-1 {
     background: #FACE9F;
     border-radius: 50%;
@@ -45,6 +50,12 @@
     top: 521.67px;
     z-index: 2;
   }
+
+
+
+  //====================
+  //** General: **
+  //====================
 
 
 .general-intro {
@@ -98,17 +109,36 @@
     margin-top: 4em;
 }
 
+.texts-intro{
+    margin: 12em 0;
+    position: relative;
+    top: 33px;
+}
+
+
+
+// >>>>>>>>>>>>>>> FLECHA SCROLL
+
+
 .arrow_downward-intro {
     display: flex;
     justify-content: center;
     padding-bottom: 2em;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 
-.texts-intro{
-    margin: 12em 0;
-    position: relative;
-    top: 33px;
+
+
+  //====================
+  //** PARA VISTA DESKTOP: **
+  //====================
+
+
+@media (min-width: 600px) {
+    .general-intro {
+        height: 700px;
+    }
 }

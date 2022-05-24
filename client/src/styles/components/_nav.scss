@@ -5,7 +5,7 @@
     margin-top: 1em;
     margin-left: 1em;
     z-index: 2;
-    cursor: pointer;
+    
 
 
     & span {
@@ -41,6 +41,7 @@
     border-radius: 25px;
     flex-direction: column;
     transition: ease-in-out;
+    
 
 
     & ul {
@@ -59,7 +60,7 @@
             margin-left: 1.4em;
             align-items: center;
             max-width: fit-content;
-            cursor: pointer;
+            
         }
 
         & li:hover{
@@ -95,4 +96,5 @@
 
 #hamburger-component {
     z-index: 3 !important;
+    cursor: pointer;
 }
