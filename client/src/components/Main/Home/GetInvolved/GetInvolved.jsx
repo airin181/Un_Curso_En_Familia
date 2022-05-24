@@ -1,7 +1,58 @@
 import React from "react";
+import arrow_downward from './../../../../assets/arrow_downward.svg';
+import formas1 from './../../../../assets/formas1.svg';
+import arrow_circle from './../../../../assets/arrow_circle_down.svg';
+import family_icon from './../../../../assets/family_restroom.svg';
 
 const GetInvolved = () => {
-  return <div>GetInvolved</div>;
+
+
+
+
+  const scrollToNext = () => {
+    window.scrollTo({
+      top:(0, 1632),
+      behavior: 'smooth'
+    });
+  };
+
+
+
+
+  
+  return <>
+    <section className="general-getinvolved">
+      <article>
+
+        <div className="title-getinvolved">
+          <figure>
+            <img src={formas1} alt="shapes icon" style={{ width: "32px", height: "32px" }} />
+          </figure>
+          <h2 className="text-title-getinvolved">Implícate</h2>
+        </div>
+
+        <div className="body-getinvolved">
+          <p>Si estás interesado en participar en nuestro programa y ayudar a un menor puedes contactarnos al +34 633 738 461 para obtener más información y resolver tus dudas. </p>
+          <p>Si quieres participar en el programa del próximo curso, ¡inscríbete!</p>
+          <div className="link-to-more-info">
+            <img src={arrow_circle} alt="Arrow with circle" />
+          {/*   // eslint-disable-next-line */}
+            <a href="#" >Conoce más sobre el proyecto</a>
+          </div>
+        </div>
+
+        <div className="buttons-getinvolved">
+          <button className="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
+        </div>
+
+      </article>
+
+      <article className="arrow_totop">
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
+        <p>Volver arriba</p>
+      </article>
+    </section>
+  </>;
 };
 
 export default GetInvolved;

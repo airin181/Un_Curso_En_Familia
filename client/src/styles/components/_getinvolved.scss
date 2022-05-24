@@ -1,7 +1,7 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.general-program {
+.general-getinvolved {
 
     display: flex;
     flex-direction: column;
@@ -10,13 +10,12 @@
     justify-content: space-between;
 
     & article {
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 }
 
-.title-program {
-    background-color: #F5F2ED;
+.title-getinvolved {
     height: 21%;
     width: 100%;
     display: flex;
@@ -27,7 +26,7 @@
     flex-direction: column;
     border-bottom-left-radius: 50px;
 
-    & .text-title-program {
+    & .text-title-getinvolved {
         font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: 600;
@@ -38,12 +37,12 @@
         color: #35312E;
     }
 
-    & figure{
+    & figure {
         margin-bottom: 3px;
     }
 }
 
-.body-program {
+.body-getinvolved {
 
     background: #FEFEFC;
     border-radius: 0px 50px 0px 0px;
@@ -82,7 +81,7 @@
     }
 }
 
-.buttons-program {
+.buttons-getinvolved {
     @include column-center;
     margin-top: 2em;
 
@@ -115,7 +114,7 @@
 
     & button:hover {
         background: #BDD2C2;
-      }
+    }
 
     & .participa-button {
         display: flex;
@@ -125,7 +124,7 @@
         padding: 8px 16px;
         gap: 14px;
 
-    
+
         width: 214px;
         height: 40px;
         left: 80px;
@@ -140,37 +139,42 @@
         line-height: 130%;
         display: flex;
         align-items: center;
-        color: #FEFEFC; 
+        color: #FEFEFC;
         flex: none;
         order: 1;
         flex-grow: 0;
     }
 
-    & .participa-button:hover{
+    & .participa-button:hover {
         background: #AC522F;
     }
 }
 
-.arrow_downward-program{
+.arrow_totop{
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 2em;
     width: 24px;
-height: 24px;
-cursor: pointer;
+    height: 24px;
+    cursor: pointer;
+
+    transform: rotate(180deg);
+
+
+    
 }
 
 
 // >>>>>>>>>>>>>>>
 
-  //====================
-  //** PARA VISTA DESKTOP: **
-  //====================
+//====================
+//** PARA VISTA DESKTOP: **
+//====================
 
 
 @media (min-width: 600px) {
-    .general-program {
+    .general-getinvolved {
         height: 700px;
     }
 }

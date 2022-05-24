@@ -5,15 +5,28 @@ import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 import family_icon from './../../../../assets/family_restroom.svg';
 import Popup from "./Popup/Popup";
 
+import{ useRef } from 'react'
+
 const Program = () => {
+
+
+
 
   const scrollToNext = () => {
     window.scrollTo({
       top:(0, 1632),
       behavior: 'smooth'
     });
-  };
+  }; 
 
+/*   const myRef = useRef(null)
+   const executeScroll = () => scrollToRef(myRef)
+
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
+  ref={myRef} */
+
+
+  
   return <>
     <section className="general-program">
       <article>
@@ -43,7 +56,7 @@ const Program = () => {
       </article>
 
       <article className="arrow_downward-program">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
+        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
       </article>
     </section>
   </>;
