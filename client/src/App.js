@@ -12,7 +12,7 @@ function App() {
             <BrowserRouter>
                 <Header/>
                 <Main/>
-                <Form/>
+                {/* <Form/> */}
             </BrowserRouter>
             <Footer/>
         </div>

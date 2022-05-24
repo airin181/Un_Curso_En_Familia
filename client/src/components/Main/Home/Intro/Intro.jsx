@@ -9,7 +9,7 @@ const Intro = () => {
 
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 700),
+      top:(0, 816),
       behavior: 'smooth'
     });
   };

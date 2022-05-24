@@ -9,8 +9,10 @@ header{
 
     & figure{
         width: 100%;
-    text-align-last: center;
-    margin-top: 2em;
-    z-index: 2000;
+        display: flex;
+        text-align-last: center;
+        margin-top: 2em;
+        z-index: 2000;
+        justify-content: center;
     }
 }
