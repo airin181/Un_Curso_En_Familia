@@ -7,14 +7,14 @@ import GetInvolved from './GetInvolved/GetInvolved'
 
 const Home = () => {
   return <>
-  
-  <Intro/>
-  <Program/>
-  <Objectives/>
-  <Testimonies/>
-<GetInvolved/>
+
+    <Intro />
+    <Program />
+    <Objectives />
+    <Testimonies />
+    <GetInvolved />
   </>
-  ;
+    ;
 };
 
 export default Home;
