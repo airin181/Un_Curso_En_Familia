@@ -48,18 +48,9 @@ input[type=text], input[type=number] {
   font-weight: 600;
   font-size: 14px;
   line-height: 130%;
-  /* or 18px */
-
   display: flex;
   align-items: center;
-
-  /* Neutros/Neutro 05 */
-
   color: #FEFEFC;
-
-
-  /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -145,7 +136,7 @@ input[type=text], input[type=number] {
   text-align: left;
 }
 //=====================================================
-.circle-1 {
+.circle-1-form {
   background: #FACE9F;
   border-radius: 50%;
   height: 11em;
@@ -156,7 +147,7 @@ input[type=text], input[type=number] {
   z-index: 1;
 }
 
-.circle-2 {
+.circle-2-form {
   background: #BDD2C2;
   border-radius: 50%;
   height: 4em;
@@ -167,7 +158,7 @@ input[type=text], input[type=number] {
   z-index: 1;
 }
 
-.circle-3 {
+.circle-3-form {
   background: #BDD2C2;
   border-radius: 50%;
   height: 6em;
@@ -178,7 +169,7 @@ input[type=text], input[type=number] {
   z-index: 2;
 }
 
-.circle-4 {
+.circle-4-form {
   background: #FACE9F;
   border-radius: 50%;
   height: 9em;
@@ -189,7 +180,7 @@ input[type=text], input[type=number] {
   z-index: 2;
 }
 //=====================================================
-.general-intro {
+.general-form {
   background-color: #F5F2ED;;
   @include column-center;
   justify-content: space-around;
