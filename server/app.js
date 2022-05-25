@@ -1,9 +1,4 @@
 require('dotenv').config();
-<<<<<<< HEAD
-=======
-
-require('./utils/MongoDb');
->>>>>>> 7f83d66a8368e24b8386d139fbb2690650374060
 const path = require('path')
 const express = require('express')
 const app = express()
