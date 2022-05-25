@@ -20,7 +20,6 @@ app.use(cors({
     credentials: true
 }));
 
-app.use(helmet());
 app.use("/", router);
 
 const init = async () => {
