@@ -4,7 +4,7 @@ import Objectives from "./Objectives/Objectives";
 import Program from './Program/Program'
 import Testimonies from './Testimonies/Testimonies'
 import GetInvolved from './GetInvolved/GetInvolved'
-import ChatBot from './Chatbot/Chatbot'
+import ThemedExample from './Chatbot/Chatbot'
 
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
     <Objectives />
     <Testimonies />
     <GetInvolved />
-    <ChatBot/>
+    <ThemedExample/>
   </>
     ;
 };
