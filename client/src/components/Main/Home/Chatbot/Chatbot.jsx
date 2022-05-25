@@ -17,38 +17,30 @@ const theme = {
   userFontColor: '#4a4a4a',
 };
 
-const steps = [
-  
+const data = [
+
     {
       id: '1',
-      message: 'What number I am thinking?',
-      trigger: '2',
+      message: 'Hello World!',
+      trigger: '2'
     },
     {
       id: '2',
-      options: [
-        { value: 1, label: 'Number 1', trigger: '4' },
-        { value: 2, label: 'Number 2', trigger: '3' },
-        { value: 3, label: 'Number 3', trigger: '3' },
-      ],
-    },
-    {
+      message: 'eeeehhhhhhhhhh tuuuuuuu',
+      trigger: '3'
+      
+    },  
+      {
       id: '3',
-      message: 'Wrong answer, try again.',
-      trigger: '2',
+      message: 'Adios',
+      end: true
     },
-    {
-      id: '4',
-      message: 'Awesome! You are a telepath!',
-      end: true,
-    },
+]
+
+const Chatbot = () => (
+
+    <ChatBot steps={data} theme={theme}/>
   
-];
+)
 
-const ThemedExample = () => (
-  <ThemeProvider theme={theme}>
-    <ChatBot steps={steps} />;
-  </ThemeProvider>
-);
-
-export default ThemedExample;
+export default Chatbot;

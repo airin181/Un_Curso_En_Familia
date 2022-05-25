@@ -12,9 +12,9 @@ const Footer = () => {
 
     <section className="footer-text">
       <p className="footer-bold-text">CONTACTA CON NOSOTROS</p>
-      <p className="footer-small-text">aseaf@aseaf.org</p>
-      <a href="tel:+34633738461" className="footer-small-text">+ 34 633 738 461</a>
-      <a href="www.aseaf.org" className="footer-small-text">www.aseaf.org</a>
+      <p className="footer-small-text" id="email">aseaf@aseaf.org</p>
+      <a href="tel:+34633738461" className="footer-small-text" id="telephone">+ 34 633 738 461</a>
+      <a href="www.aseaf.org" className="footer-small-text" id="web-address">www.aseaf.org</a>
     </section>
 
     <section>
@@ -24,10 +24,10 @@ const Footer = () => {
 
     <section className="rrss-icons">
       
-      <a href="https://www.facebook.com/Aseaf_isn-107303130672570/"><img src={facebook} alt="Facebook icon" style={{width:"24px"}} /></a>
-      <a href="https://www.linkedin.com/"><img src={linkedin} alt="Linkedin icon" style={{width:"24px"}}/></a>
-      <a href="https://twitter.com/aseaf_isn"><img src={twitter} alt="Twitter icon" style={{width:"24px"}}/></a>
-      <a href="https://www.youtube.com/channel/UCeSmi5FQ15mRUFxNj97eQQw"><img src={youtube} alt="Youtube icon" style={{width:"24px"}}/></a>
+      <a href="https://www.facebook.com/Aseaf_isn-107303130672570/" id="facebook"><img src={facebook} alt="Facebook icon" style={{width:"24px"}} /></a>
+      <a href="https://www.linkedin.com/" id="linkedin"><img src={linkedin} alt="Linkedin icon" style={{width:"24px"}}/></a>
+      <a href="https://twitter.com/aseaf_isn" id="twitter"><img src={twitter} alt="Twitter icon" style={{width:"24px"}}/></a>
+      <a href="https://www.youtube.com/channel/UCeSmi5FQ15mRUFxNj97eQQw" id="youtube"><img src={youtube} alt="Youtube icon" style={{width:"24px"}}/></a>
       
     </section>
 
