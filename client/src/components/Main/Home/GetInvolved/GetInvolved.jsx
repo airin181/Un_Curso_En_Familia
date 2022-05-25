@@ -45,10 +45,10 @@ const GetInvolved = () => {
           <button className="participa-button" id="participate-2"><img src={family_icon} alt="Family icon" />¡Participa!</button>
         </div>
 
-          <blackquote className="quote-div">
+          <div className="quote-div">
             <p className="quote-text">«Los vínculos no los da la sangre. Conocimos la necesidad de los niños tutelados y nos decidimos por la acogida.»</p>
             <p className="quote-author">- Familia perteneciente al programa</p>
-          </blackquote>
+          </div>
 
       </article>
 
