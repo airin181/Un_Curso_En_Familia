@@ -44,13 +44,13 @@ const Program = () => {
           <div className="link-to-more-info">
             <img src={arrow_circle} alt="Arrow with circle" />
           {/*   // eslint-disable-next-line */}
-            <a href="#" >Conoce más sobre el proyecto</a>
+            <a href="#" id="know-more-about-1">Conoce más sobre el proyecto</a>
           </div>
         </div>
 
         <div className="buttons-program">
-        <Popup/>
-          <button className="participa-button"><img src={family_icon} alt="Family icon" />¡Participa!</button>
+        <Popup id="download-dossier-1"/>
+          <button className="participa-button" id="participate-1" ><img src={family_icon} alt="Family icon" />¡Participa!</button>
         </div>
 
       </article>
