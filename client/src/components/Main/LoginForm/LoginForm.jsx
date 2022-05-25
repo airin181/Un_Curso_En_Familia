@@ -16,7 +16,7 @@ const LoginForm = () => {
       password: data.password
     };
 
-    const response = await axios.post("https://vincula-back.herokuapp.com/api/login", values);
+    const response = await axios.post("https://vincula-back.herokuapp.com/login", values);
     const loginResponse = response.data;
 
     if (loginResponse.msg === "Authenticated correctly!") {
