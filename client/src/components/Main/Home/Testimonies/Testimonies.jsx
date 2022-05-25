@@ -122,12 +122,12 @@ const Testimonies = () => {
 
 
       <div className="video-container">
-        {video ? <iframe src={main} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : ""}
+        {video ? <iframe src={main} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen id="youtube-video"></iframe> : ""}
         {image ? <img src={image} alt="Testimonio" style={{ width: "100%", maxWidth: "500px" }} /> : ""}
       </div>
 
-      <div className="testimonies-img">
-        <div className="circular--landscape">
+      <div className="testimonies-img" >
+        <div className="circular--landscape" >
           <img src={img_video_1} alt="Miniatura video testimonio" onClick={(e) => imageClick(e.target.src)} />
         </div>
         <div className="circular--landscape">
@@ -144,9 +144,9 @@ const Testimonies = () => {
         </div>
       </div>
 
-      <div className="link-to-more-info">
+      <div className="link-to-more-info" id="">
         <img src={arrow_circle} alt="Arrow with circle" />
-        <a href="">Conoce más Testimonios</a>
+        <a href="" id="know-more-testimonies">Conoce más Testimonios</a>
       </div>
 
       <div className="cards-testimonies">
