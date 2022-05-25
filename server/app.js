@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
     origin: ["https://vincula-front.herokuapp.com/", "http://localhost:3000"],
-    methods:"GET,POST,PUT,DELETE",
+    methods:["GET,POST,PUT,DELETE"],
     credentials: true
 }));
 
