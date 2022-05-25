@@ -1,9 +1,12 @@
 import React from "react";
 import Intro from './Intro/Intro';
 import Objectives from "./Objectives/Objectives";
+
 import Program from './Program/Program'
 import Testimonies from './Testimonies/Testimonies'
 import GetInvolved from './GetInvolved/GetInvolved'
+
+
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import Paula from './../../../assets/paula.jpeg'
@@ -11,7 +14,9 @@ import { textAlign } from "@mui/system";
 
 
 const theme = {
+
   background: '#fff',
+
   fontFamily: 'Poppins',
   headerBgColor: '#BDD2C2',
   headerFontColor: '#35312E',
@@ -35,6 +40,7 @@ const Home = () => {
     <Objectives />
     <Testimonies />
     <GetInvolved />
+
 
     <ThemeProvider theme={theme}>
 
