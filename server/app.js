@@ -14,23 +14,25 @@ const helmet = require('helmet');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
-    origin: ["https://vincula-front.herokuapp.com/", "http://localhost:3000"],
-    methods:["GET,POST,PUT,DELETE"],
-    credentials: true
-}));
+/* app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://vincula-front.herokuapp.com/");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+}); */
+
+app.use(cors());
 
 app.use("/", router);
 
 const init = async () => {
-  try {
-      await mongoDBConnection();
-      app.listen(port, () => {
-          console.log(`App listening on port ${port}...`);
-      })
-  }
-  catch (error) {
-      console.log(error);
-  }
+    try {
+        await mongoDBConnection();
+        app.listen(port, () => {
+            console.log(`App listening on port ${port}...`);
+        })
+    }
+    catch (error) {
+        console.log(error);
+    }
 };
 init();
