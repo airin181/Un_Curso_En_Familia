@@ -1,9 +1,9 @@
 import React from "react";
 import Intro from './Intro/Intro';
 import Objectives from "./Objectives/Objectives";
-import Program from './Program/Program'
-import Testimonies from './Testimonies/Testimonies'
-import GetInvolved from './GetInvolved/GetInvolved'
+import Program from './Program/Program';
+import Testimonies from './Testimonies/Testimonies';
+import GetInvolved from './GetInvolved/GetInvolved';
 
 import ChatBot from 'react-simple-chatbot';
 
@@ -32,6 +32,7 @@ const Home = () => {
     <Objectives />
     <Testimonies />
     <GetInvolved />
+
 
     <ChatBot theme={theme}
       steps={[
@@ -120,6 +121,8 @@ const Home = () => {
         },
       ]}
     />
+
+
   </>
 };
 

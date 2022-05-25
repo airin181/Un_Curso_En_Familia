@@ -6,7 +6,7 @@ import UserProfile from "./LoginForm/UserProfile/UserProfile";
 
 
 const Main = () => {
-  return <main style={{overflow: "hidden", position: "relative"}}>
+  return <main style={{ overflow: "hidden", position: "relative" }}>
     <Routes>
       <Route element={<Home />} path='/' />
       <Route element={<LoginForm />} path='/login' />
