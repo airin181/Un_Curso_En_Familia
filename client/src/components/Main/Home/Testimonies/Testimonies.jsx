@@ -79,6 +79,21 @@ const Testimonies = () => {
       id: 6,
       front: "¿Qué sucede si el menor tiene problemas de conducta?",
       back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+    },
+    {
+      id: 7,
+      front: "¿Qué sucede si el menor tiene antecedentes familiares?",
+      back: "El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
+    },
+    {
+      id: 8,
+      front: "¿Tienes que ser rico para poder acoger?",
+      back: "No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
+    },
+    {
+      id: 9,
+      front: "¿Qué sucede si el menor tiene problemas de conducta?",
+      back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
     }
   ]
 
@@ -138,14 +153,15 @@ const Testimonies = () => {
         <div className="scrolling-wrapper">
           {paintCards()}
         </div>
+      
       </div>
 
 
 
     </article>
-      <article className="arrow_downward-testimonies">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-      </article>
+    <article className="arrow_downward-testimonies">
+      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
+    </article>
 
 
   </section>

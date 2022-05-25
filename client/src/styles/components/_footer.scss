@@ -1,11 +1,123 @@
 @import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-.general-footer{
+.general-footer {
     @include column-center;
     background-color: #596B61;
     color: white;
     text-align: center;
+    font-family: "Poppins";
+    padding: 0em;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-small-text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    margin: 0.2em;
+    text-decoration: none;
+    color: white;
 }
 
 
+
+.footer-bold-text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2em 0 1em 0;
+}
+
+
+.legals-texts {
+    @include column-center;
+    @extend .footer-small-text;
+    width: 100%;
+    margin-bottom: 3em;
+    max-width: 400px;
+
+    & span {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.legals-texts a {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.legals-texts a:hover {
+    text-decoration: underline;
+}
+
+#email-dossier {
+    border: 1px solid #EFF7EF;
+    border-radius: 8px;
+    width: 14em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 24px;
+    box-sizing: border-box;
+    margin: 1em;
+    background: transparent;
+    color: #EFF7EF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    padding-left: 0.5em;
+
+}
+
+
+
+#email-dossier::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    display: flex;
+ 
+    color: #EFF7EF;
+   
+    background-image: url('./../../assets/envelope3.svg');
+    background-position: 6px 4px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+
+#email-dossier input[type="text"] {
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+
+.rrss-icons{
+    width: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
