@@ -1,6 +1,6 @@
 import React from "react";
 import arrow_downward from './../../../../assets/arrow_downward.svg';
-
+import logo from './../../../../assets/Logo.svg';
 
 
 const Intro = () => {
@@ -19,6 +19,7 @@ const Intro = () => {
 
     <article>
       <article className="texts-intro">
+        <img src={logo} alt="logo un curso en familia" />
         <div className="title">
           <h1 className="h1-b" style={{ color: "#596B61" }}>¡Bienvenido a</h1>
           <h1 className="h1-b" style={{ color: "#596B61" }}>Un Curso en Familia!</h1>
@@ -34,6 +35,7 @@ const Intro = () => {
       <div className="circle-2"></div>
       <div className="circle-3"></div>
       <div className="circle-4"></div>
+      <div className="circle-5"></div>
     </article>
     </article>
 
