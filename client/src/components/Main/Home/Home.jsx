@@ -5,6 +5,9 @@ import Program from './Program/Program'
 import Testimonies from './Testimonies/Testimonies'
 import GetInvolved from './GetInvolved/GetInvolved'
 
+import ThemedExample from './Chatbot/Chatbot'
+
+
 import ChatBot from 'react-simple-chatbot';
 /* import { ThemeProvider } from 'styled-components';
 
@@ -56,6 +59,7 @@ const Home = () => {
     <Objectives />
     <Testimonies />
     <GetInvolved />
+
     <ChatBot
     steps={[
       {
@@ -86,6 +90,9 @@ const Home = () => {
       },
     ]}
 />
+
+  
+
   </>
 };
 

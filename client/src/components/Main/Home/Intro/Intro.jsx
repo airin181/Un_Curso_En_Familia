@@ -27,7 +27,7 @@ const Intro = () => {
         <div className="subtext">
           <p>¿Te gustaría cambiar el destino de un menor?</p>
           <p>¡Descubre nuestro proyecto!</p>
-          <p className="caption">CURSO 2022/2023</p>
+          <p className="caption" id="academic-term">CURSO 2022/2023</p>
         </div>
       </article>
       <article>
