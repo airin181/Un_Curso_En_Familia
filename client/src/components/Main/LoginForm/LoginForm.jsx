@@ -22,9 +22,7 @@ const LoginForm = () => {
     if (loginResponse.msg === "Authenticated correctly!") {
       setLogged(true)
       setUser(data.email)
-    };
-
-    console.log(values);
+    }
   };
 
   const handleLoggedState = () => {
