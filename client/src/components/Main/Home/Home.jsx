@@ -6,11 +6,12 @@ import Testimonies from './Testimonies/Testimonies'
 import GetInvolved from './GetInvolved/GetInvolved'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import paula from ''
+import Paula from './../../../assets/paula.jpeg'
+import { textAlign } from "@mui/system";
 
 
 const theme = {
-  background: '#FFFFF',
+  background: '#fff',
   fontFamily: 'Poppins',
   headerBgColor: '#BDD2C2',
   headerFontColor: '#35312E',
@@ -19,10 +20,7 @@ const theme = {
   botFontColor: '#35312E',
   userBubbleColor: '#fff',
   userFontColor: '#35312E',
-  /* botAvatar:{paula}, */
-  headerTitle: 'Asistente Virtual',
-  placeholder: 'Selecciona una opción',
-  hideSubmitButton: true,
+  
 };
 
 
@@ -125,11 +123,23 @@ const Home = () => {
             message: 'Agradecemos que te hayas interesado por Un Curso en Familia. ¡Esperamos verte pronto!',
             end: true,
 
-          },
+          }
         ]}
-      />
-    </ThemeProvider>
+        headerTitle={'Asistente Virtual'}
+        placeholder={'Selecciona una opción'}
+        botAvatar={Paula}
+        hideSubmitButton={true}
+        botDelay={1000}
+        cache={true}
+        enableSmoothScroll={true}
+        floating={true}
+      
+        hideUserAvatar={true}
+        
+        
+        />
 
+    </ThemeProvider>
   </>
 };
 
