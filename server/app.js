@@ -13,17 +13,14 @@ const helmet = require('helmet');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
-    origin: "https://vincula-front.herokuapp.com/",
-    methods:"GET,POST,PUT,DELETE",
-    allowedHeaders:["Content-Type"],
+    origin: ["https://vincula-front.herokuapp.com/", "http://localhost:3000"],
+    methods:["GET,POST,PUT,DELETE"],
+    credentials: true
 }));
-app.use(
-    helmet({
-      contentSecurityPolicy: false,
-      crossOriginEmbedderPolicy: false,
-    })
-);
+
+app.use(helmet());
 app.use("/", router);
 
 const init = async () => {
