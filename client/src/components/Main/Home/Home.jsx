@@ -130,8 +130,6 @@ const Home = () => {
       />
     </ThemeProvider>
 
-
-
   </>
 };
 
