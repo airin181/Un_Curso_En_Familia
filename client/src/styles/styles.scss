@@ -1,14 +1,16 @@
-@import './components/header';
-@import './components/nav';
-@import './components/home';
+@import './components/Header/header';
+@import './components/Header/nav';
+@import './components/Main/Home/home';
 @import './components/footer';
-@import './components/intro';
-@import './components/program';
-@import './components/objectives';
-@import './components/testimonies';
-@import './components/card';
-@import './components/popup';
-@import './components/getinvolved';
-@import './components/form';
+@import './components/Main/Home/intro';
+@import './components/Main/Home/program';
+@import './components/Main/Home/objectives';
+@import './components/Main/Home/testimonies';
+@import './components/Main/Home/card';
+@import './components/Main/Home/popup';
+@import './components/Main/Home/getinvolved';
+@import './components/Main/Home/form';
+@import './components/Main/LoginForm/loginForm';
+@import './components/Main/Home/profile';
 
 
