@@ -7,6 +7,8 @@ import checklist from "./../../../../assets/checklist 1.svg"
 import notebook from "./../../../../assets/notebook 1.svg"
 import pencils from "./../../../../assets/pencils 1.svg"
 import timetable from "./../../../../assets/timetable 1.svg"
+import school from "./../../../../assets/school.svg"
+import members from "./../../../../assets/members.svg"
 
 const UserProfile = () => {
 
@@ -18,25 +20,27 @@ const UserProfile = () => {
         !logged ? <Navigate to='/' /> : <>
 
           <article className="user-details">
-            <div>
+            <div className="user-details-top">
 
-              <div className="circular--landscape">
+              <div className="circular--landscape--profile">
                 <img src={userImg} alt="user" className="user__img" />
               </div>
 
-              <h1 className="user__name">
-                Pedro del Olmo
-              </h1>
-              <h3 className="user__year">
-                CURSO 2022/2023
-              </h3>
+              <h1 className="user__name">Pedro del Olmo</h1>
+              <h3 className="user__year">CURSO 2022/2023</h3>
             </div>
 
             <div>
-              <p>Colegio Pablo Neruda</p>
-              <p>23 miembros</p>
+              <div className="user-details-bottom">
+                <img src={school} alt="user" className="user__img" />
+                <p>E.I. Pablo Neruda</p>
+              </div>
+              <div>
+                <img src={members} alt="user" className="user__img" />
+                <p>23 miembros</p>
+              </div>
             </div>
-            
+
           </article>
 
 
@@ -64,7 +68,7 @@ const UserProfile = () => {
             <div className="circle-2-profile"></div>
             <div className="circle-3-profile"></div>
             <div className="circle-4-profile"></div>
-            <div className="circle-5-profile"></div>
+
           </article>
         </>
       }

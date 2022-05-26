@@ -1,12 +1,15 @@
 import React from "react";
 import {useForm} from "react-hook-form";
 import family_icon from "../../../../assets/family_restroom.svg";
+import logo from "../../../../assets/logo1.svg"
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Form = () => {
     const {register, handleSubmit} = useForm();
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data,e) => {
         // console.log(data)
+        e.preventDefault();
         fetch('http://localhost:5000/api/create', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -17,224 +20,276 @@ const Form = () => {
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
     }
+
     return (
 
         <form className="formulario" onSubmit={handleSubmit(onSubmit)}>
             <div className="conjunto">
                 <div className="beginningpage">
+                    <img src={logo} alt=""/>
                     <h1 className="h1-b" style={{color: "#596B61"}}>Solicitud de inscripción</h1>
-                    <p>“Programa Un Curso en Familia”</p>
+                    <p>Programa Un Curso en Familia</p>
                     <p className="caption">CURSO 2022/2023</p>
                     <button id="begin-button">Empezar</button>
                 </div>
 
                 <div className="firstform">
-                    <label className="forminputs">Nombre y apellidos*</label>
-                    <input type="text" {...register("namesur")} placeholder="Nombre y Apellidos" required/>
-                    <label className="forminputs">Email*</label>
-                    <input type="text" name="email" {...register("email")} placeholder="correo@email.com" required/>
-                    <label className="forminputs">Teléfono de contacto*</label>
-                    <input type="number" {...register("telephone")} placeholder="600 000 000" required/>
-                    <label className="forminputs">Dirección*</label>
-                    <input type="text" {...register("address")} placeholder="address" required/>
-                    <label className="forminputs">Código Postal*</label>
-                    <input type="number" {...register("postalcode")} placeholder="postalcode" required/>
+                    <div className="logoform"><img src={logo} alt=""/>
+                        <div>
+                            1 2 3 4 5
+                        </div>
+                    </div>
+                    <div className="firstforminputs">
+                        <div>
+                            <label className="forminputs">Nombre y apellidos*</label>
+                            <input type="text" {...register("namesur", {minLength: 3 })} placeholder="Nombre y Apellidos" required/>
+                            {/*<FontAwesomeIcon icon="fa-thin fa-envelope" />*/}
+                        </div>
+                        <div>
+                            <label className="forminputs">Email*</label>
+                            <input type="text" name="email" {...register("email", {pattern: /[A-Za-z]{3}/})} placeholder="correo@email.com"
+                                   required/>
+                        </div>
+                        <div>
+                            <label className="forminputs">Teléfono de contacto*</label>
+                            <input type="number" {...register("telephone", {valueAsNumber: true, minLength: 9, maxLength: 11})} placeholder="600 000 000" required/>
+                        </div>
+                        <div>
+                            <label className="forminputs">Dirección*</label>
+                            <input type="text" {...register("address")} placeholder="address" required/>
+                        </div>
+                        <div>
+                            <label className="forminputs">Código Postal*</label>
+                            <input type="number" {...register("postalcode", {valueAsNumber: true, minLength:5})} placeholder="postalcode" required/>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="secondform">
-                    <h3>¿Has tenido contacto previo con niños o addolescentes bajo medidas de protección?</h3>
-
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="fosterfamily"
-                            type="radio"
-                            value="Famila de acogida idónea"
-                        />
-                        Soy una familia acojedora con idoneidad
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="formerfosterfamily"
-                            type="radio"
-                            value="He sido familia acogedora con idoneidad hace tiempo"
-                        />
-                        He sido familia acogedora con idoneidad hace tiempo
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="formerfosterfamily"
-                            type="radio"
-                            value="He participado en programas de acogimiento vacacional"
-                        />
-                        He participado en programas de acogimiento vacacional
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="knowthroughpeople"
-                            type="radio"
-                            value="Conozco el acogimiento familiar a través de personas de mi entorno que han acogido"
-                        />
-                        Conozco el acogimiento familiar a través de personas de mi entorno que han acogido
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="volunteer"
-                            type="radio"
-                            value="Colaboro como voluntario/a en una residencia infantil"
-                        />
-                        Colaboro como voluntario/a en una residencia infantil
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="minorfosterbefore"
-                            type="radio"
-                            value="He participado en programas y actividades puntuales con menores en acogimiento residencial"
-                        />
-                        He participado en programas y actividades puntuales con menores en acogimiento residencial
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="nocontactfoster"
-                            type="radio"
-                            value="No he tenido contacto previo"
-                        />
-                        No he tenido contacto previo
-                    </label>
-                    <label className="forminputs">
-                        <input
-                            {...register("previouscontact")}
-                            name="other"
-                            type="radio"
-                            value="Otro"
-                        />
-                        Otro:
-                    </label>
+                    <div className="logoform"><img src={logo} alt=""/>
+                        <div>
+                            1 2 3 4 5
+                        </div>
+                    </div>
+                    <div className="secondforminputs">
+                        <h3>¿Has tenido contacto previo con niños, o addolescentes bajo medidas de protección?</h3>
+                        <div>
+                            <label className="formradios">Soy una familia acogedora con idoneidad</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="Famila de acogida idónea"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">He sido familia acogedora con idoneidad hace tiempo</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="He sido familia acogedora con idoneidad hace tiempo"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">He participado en programas de acogimiento vacacional</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="He participado en programas de acogimiento vacacional"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="contactbefore" className="formradios">Conozco el acogimiento familiar a
+                                través de personas de mi entorno que han acogido</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="Conozco el acogimiento familiar a través de personas de mi entorno que han acogido"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">Colaboro como voluntario/a en una residencia infantil</label>
+                            <input
+                                {...register("previouscontact", {required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="Colaboro como voluntario/a en una residencia infantil"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">He participado en programas y actividades puntuales con
+                                menores en acogimiento residencial</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="He participado en programas y actividades puntuales con menores en acogimiento residencial"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">No he tenido contacto previo</label>
+                            <input
+                                {...register("previouscontact", { required: true})}
+                                name="contactbefore"
+                                type="radio"
+                                value="No he tenido contacto previo"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 <div className="thirdform">
-                    <label>¿Cuantas personas formáis parte del núcleo familiar conviviente?</label>
-                    <h5>Incluyendote a ti</h5>
-                    <input type="number" {...register("numpeople")} name="numpeople" placeholder="4" required/>
-                    <label>¿Tienes hijos?</label>
-                    <label>
-                        <input
-                            {...register("havesons")}
-                            name="yes"
-                            type="radio"
-                            value="si"
-                        />
-                        Si
-                    </label>
-                    <label>
-                        <input
-                            {...register("havesons")}
-                            name="no"
-                            type="radio"
-                            value="no"
-                        />
-                        No
-                    </label>
-                    <label>Si procede, edad y sexo/género de los niños/as o adolescentes que forman parte de tu
-                        núcleo
-                        de convivencia</label>
-                    <input type="number" {...register("agesex")} placeholder="10 años, mujer" required/>
+                    <div className="logoform"><img src={logo} alt=""/>
+                        <div>
+                            1 2 3 4 5
+                        </div>
+                    </div>
+                    {/*============================================*/}
+                    <div className="thirdforminputs">
+                        <div>
+                            <h3>¿Cuantas personas formáis parte del núcleo familiar conviviente?</h3>
+                            <h5>Incluyendote a ti</h5>
+                            <input type="number" {...register("numpeople")} name="numpeople" placeholder="4" required/>
+                        </div>
+                    </div>
+                    {/*============================================*/}
+                    <div className="thirdformradioinputs">
+                        <label>¿Tienes hijos?</label>
+                        <div>
+                            <label>Si</label>
+                            <input
+                                {...register("havesons")}
+                                name="sons"
+                                type="radio"
+                                value="si"
+                            />
+                        </div>
+                        <div>
+                            <label>No</label>
+                            <input
+                                {...register("havesons")}
+                                name="sons"
+                                type="radio"
+                                value="no"
+                            />
+                        </div>
+                    </div>
+                    {/*============================================*/}
+                    <div className="thirdforminputs">
+                        <div>
+                            <label>Si procede, edad y sexo/género de los niños/as o adolescentes que forman parte de tu
+                                núcleo
+                                de convivencia</label>
+                            <input type="number" {...register("agesex", {valueAsNumber: true})} placeholder="10 años, mujer" required/>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="fourthform">
-                    <label>¿A menores de qué rango de edad estarías dispuesto a acoger?*</label>
-                    <h5>Los y las menores bajo medidas de protección a los que se dirige el programa se encuentran
-                        en el
-                        rango de edad entre 6 y 17 años</h5>
-                    <input type="number" {...register("age")} name="age" placeholder="6-17"
-                           required/>
-                    <label>¿Tienes relación con algún menor en concreto?</label>
-                    <h5>Si es así indica nombre, residencia, a qué se debe la relación y el tiempo que hace que os
-                        conocéis</h5>
-                    <input type="text" {...register("relationship")} placeholder="Si/No"/>
+                    <div className="logoform"><img src={logo} alt=""/>
+                        <div>
+                            1 2 3 4 5
+                        </div>
+                    </div>
+                    <div className="fourthforminputs">
+                        <div>
+                            <label>¿A menores de qué rango de edad estarías dispuesto a acoger?*</label>
+                            <h5>Los y las menores bajo medidas de protección a los que se dirige el programa se
+                                encuentran
+                                en el
+                                rango de edad entre 6 y 17 años</h5>
+                            <input type="number" {...register("age", {valueAsNumber: true})} name="age" placeholder="6-17"
+                                   required/>
+                        </div>
+                        <div>
+                            <label>¿Tienes relación con algún menor en concreto?</label>
+                            <h5>Si es así indica nombre, residencia, a qué se debe la relación y el tiempo que hace que
+                                os
+                                conocéis</h5>
+                            <input type="text" {...register("relationship")} placeholder="Si/No"/>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="fifthform">
-                    <h3>¿Cómo has conocido el proyecto?*</h3>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="dgi"
-                            type="radio"
-                            value="Dirección General de Infancia, Familias y fomento de la Natalidad"
-                        />
-                        Dirección General de Infancia, Familias y fomento de la Natalidad
-                    </label>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="aseaf"
-                            type="radio"
-                            value="ASEAF"
-                        />
-                        ASEAF
-                    </label>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="fpla"
-                            type="radio"
-                            value="Familias Para la Acogida"
-                        />
-                        Familias Para la Acogida
-                    </label>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="adamcam"
-                            type="radio"
-                            value="ADAMCAM"
-                        />
-                        ADAMCAM
-                    </label>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="trust"
-                            type="radio"
-                            value="Fundación Soñar Despierto"
-                        />
-                        Fundación Soñar Despierto
-                    </label>
-                    <label>
-                        <input
-                            {...register("proyectknowledge")}
-                            name="another"
-                            type="radio"
-                            value="otro"
-                        />
-                        Otro:
-                    </label>
-                    <h3>¿Tienes alguna duda concreta sobre el proyecto?</h3>
-                    <input type="text" {...register("doubt")} placeholder="Escribe aquí..." required/>
+                    <div className="logoform"><img src={logo} alt=""/>
+                        <div>
+                            1 2 3 4 5
+                        </div>
+                    </div>
+                    <div className="fifthforminputs">
+                        <h3>¿Cómo has conocido el proyecto?*</h3>
+                        <div>
+                            <label className="formradios">Dirección General de Infancia, Familias y fomento de la
+                                Natalidad</label>
+                            <input
+                                {...register("proyectknowledge")}
+                                name="knowledge"
+                                type="radio"
+                                value="Dirección General de Infancia, Familias y fomento de la Natalidad"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">ASEAF</label>
+                            <input
+                                {...register("proyectknowledge")}
+                                name="knowledge"
+                                type="radio"
+                                value="ASEAF"
+                            />
+
+                        </div>
+                        <div>
+                            <label className="formradios">Familias Para la Acogida</label>
+                            <input
+                                {...register("proyectknowledge")}
+                                name="knowledge"
+                                type="radio"
+                                value="Familias Para la Acogida"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">ADAMCAM</label>
+                            <input
+                                {...register("proyectknowledge")}
+                                name="knowledge"
+                                type="radio"
+                                value="ADAMCAM"
+                            />
+                        </div>
+                        <div>
+                            <label className="formradios">Fundación Soñar Despierto</label>
+                            <input
+                                {...register("proyectknowledge")}
+                                name="knowledge"
+                                type="radio"
+                                value="Fundación Soñar Despierto"
+                            />
+                        </div>
+
+                        <h3>¿Tienes alguna duda concreta sobre el proyecto?</h3>
+                        <div>
+                            <input className="doubt" type="text" {...register("doubt")} placeholder="Escribe aquí..." required/>
+                        </div>
+                    </div>
+                    <input type="submit" id="send-button"/>
                 </div>
                 <div className="endingpage">
-                    <h2 className="titulo">¡Solicitud completada</h2>
-                    <h2>con éxito!</h2>
-                    <h3 className="titulo2">Nos pondremos en contacto contigo cuando</h3>
-                    <h3>revisemos la solicitud</h3>
+                    <img src={logo} alt=""/>
+                    <h1 className="h1-a">¡Solicitud completada con éxito!</h1>
+                    <p>Nos pondremos en contacto contigo cuando revisemos la solicitud</p>
                     <h3>¡Gracias por implicarte!</h3>
+                    <button id="begin-button">Salir</button>
                 </div>
             </div>
-            <input type="submit"/>
-        </form>);
+
+        </form>
+    )
+        ;
 };
-<article>
-    <div className="circle-1-form"></div>
-    <div className="circle-2-form"></div>
-    <div className="circle-3-form"></div>
-    <div className="circle-4-form"></div>
-</article>
+
 
 export default Form;
