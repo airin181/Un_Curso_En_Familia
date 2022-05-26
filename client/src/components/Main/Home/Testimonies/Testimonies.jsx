@@ -79,6 +79,21 @@ const Testimonies = () => {
       id: 6,
       front: "¿Qué sucede si el menor tiene problemas de conducta?",
       back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
+    },
+    {
+      id: 7,
+      front: "¿Qué sucede si el menor tiene antecedentes familiares?",
+      back: "El objetivo de esta acción es que el menor pueda volver con su familia, por lo que sus antecedentes son parte de la historia del menor."
+    },
+    {
+      id: 8,
+      front: "¿Tienes que ser rico para poder acoger?",
+      back: "No hay que ser millonario ni superhéroe, pero sí saber qué niño puedes acoger. Generalmente son familias de nivel medio."
+    },
+    {
+      id: 9,
+      front: "¿Qué sucede si el menor tiene problemas de conducta?",
+      back: "Los menores si están en un ambiente estable, con rutinas, normas y afecto, responderán correctamente a todas las interacciones con su entono."
     }
   ]
 
@@ -107,12 +122,12 @@ const Testimonies = () => {
 
 
       <div className="video-container">
-        {video ? <iframe src={main} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : ""}
+        {video ? <iframe src={main} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen id="youtube-video"></iframe> : ""}
         {image ? <img src={image} alt="Testimonio" style={{ width: "100%", maxWidth: "500px" }} /> : ""}
       </div>
 
-      <div className="testimonies-img">
-        <div className="circular--landscape">
+      <div className="testimonies-img" >
+        <div className="circular--landscape" >
           <img src={img_video_1} alt="Miniatura video testimonio" onClick={(e) => imageClick(e.target.src)} />
         </div>
         <div className="circular--landscape">
@@ -129,23 +144,24 @@ const Testimonies = () => {
         </div>
       </div>
 
-      <div className="link-to-more-info">
+      <div className="link-to-more-info" id="">
         <img src={arrow_circle} alt="Arrow with circle" />
-        <a href="">Conoce más Testimonios</a>
+        <a href="" id="know-more-testimonies">Conoce más Testimonios</a>
       </div>
 
       <div className="cards-testimonies">
         <div className="scrolling-wrapper">
           {paintCards()}
         </div>
+      
       </div>
 
 
 
     </article>
-      <article className="arrow_downward-testimonies">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-      </article>
+    <article className="arrow_downward-testimonies">
+      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
+    </article>
 
 
   </section>

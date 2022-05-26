@@ -1,0 +1,154 @@
+@import '../../../utils/mixins.scss';
+@import '../../../utils/variables.scss';
+
+
+//====================
+//** Circulos fondo: **
+//====================
+
+
+
+.circle-1-profile {
+  background: #FACE9F;
+  border-radius: 50%;
+  height: 11em;
+  width: 11em;
+  position: absolute;
+  left: -70px;
+  top: -27px;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.circle-2-profile {
+  background: #BDD2C2;
+
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  position: absolute;
+  left: -20px;
+  top: 122px;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.circle-3-profile {
+  background: #BDD2C2;
+  border-radius: 50%;
+  height: 6em;
+  width: 6em;
+  position: absolute;
+  right: -53px;
+  top: 188px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.circle-4-profile {
+  background: #FACE9F;
+  border-radius: 50%;
+  height: 10em;
+  width: 10em;
+  position: absolute;
+  right: -58px;
+  opacity: 0.5;
+  top: -46px;
+  z-index: 1;
+}
+
+
+
+//====================
+//** General: **
+//====================
+
+.user-details {
+  height: 40vh;
+  border-bottom-left-radius: 50px;
+  background-color: #F5F2ED;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+  z-index: 1;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.user-details-top{
+  @include column-center;
+    z-index: 2;
+
+}
+
+.user-details-bottom{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.circular--landscape{
+  border-width: 2px;
+  border-color: #F0985E;
+}
+
+
+.user-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.3em;
+  flex-direction: row;
+
+
+  & div {
+    margin: 0.3em;
+    background-color: #FEF2DF;
+    width: 164px;
+    height: 176px;
+    border-radius: 20px;
+    flex-direction: column;
+    @include wrap-center
+  }
+
+  & img {
+    width: 88px;
+    height: 88px;
+  }
+
+  & h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    /* or 21px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* Neutros/Neutro 01 */
+
+    color: #35312E;
+  }
+}
+
+
+.circular--landscape--profile{
+
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F0985E;
+  clip-path: circle(50% at 50% 50%);
+ 
+  & .user__img{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+  }
+}

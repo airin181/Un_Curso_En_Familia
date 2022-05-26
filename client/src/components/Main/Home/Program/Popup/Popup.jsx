@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import attach_icon from './../../../../../assets/attach_email.svg';
-import iconSent from './../../../../../assets/sent.svg'; 
+import iconSent from './../../../../../assets/sent.svg';
 
 
 
@@ -32,10 +32,11 @@ const Popup = () => {
 
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
-
+  const [checked, setChecked] = useState(false)
   const [emailTyped, setEmailTyped] = useState("");
 
   const [invalidEmailMessage, setInvalidEmailMessage] = useState(false);
+  const [checkboxMissingMessage, setCheckboxMissingMessage] = useState(false);
 
 
 
@@ -54,30 +55,29 @@ const Popup = () => {
     setEmailTyped(event.target.value)
   }
 
-
+//validación
   const handleSubmit = () => {
 
-    if (emailRegexp.test(emailTyped)) {
+    if (emailRegexp.test(emailTyped) && checked) {
       setSent(true)
       setInvalidEmailMessage(false)
+      setCheckboxMissingMessage(false)
       console.log("email válido");
 
-    } else {
+    } else if (!checked  && !(emailRegexp.test(emailTyped))){
+      setCheckboxMissingMessage(true)
       setInvalidEmailMessage(true)
+      console.log("falta aceptar términos y condiciones y meter email");
+    } else if (!checked){
+      setCheckboxMissingMessage(true)
+      setInvalidEmailMessage(false)
+    }
+    else{
+      setInvalidEmailMessage(true)
+      setCheckboxMissingMessage(false)
+
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -97,7 +97,7 @@ const Popup = () => {
           </section>
 
           {!sent ? <>
-       
+
             <div>
               <div id="hubspotForm"></div>
             </div>
@@ -105,8 +105,13 @@ const Popup = () => {
               <h3 className="h3-modal">Introduce tu email y te enviaremos el dossier del programa completo</h3>
 
               <article>
-                <input name="email" id="email-dossier" placeholder="Introduce tu email" onChange={handleInputChange} />
+                <input name="email" id="email-dossier-popup" placeholder="Introduce tu email" onChange={handleInputChange} />
+                <div className="tacbox">
+                  <input id="checkbox" type="checkbox" name="checkbox" onChange={(e) => setChecked(true)}/>
+                  <label htmlFor="checkbox">Acepto los <a href="">Términos y Condiciones</a></label>
+                </div>
                 {invalidEmailMessage ? <p className="error-msg">E-mail inválido</p> : ""}
+                {checkboxMissingMessage ? <p className="error-msg">Es obligatorio aceptar los Términos y Condiciones</p> : ""} 
               </article>
 
               <button className="getInvolved-button" onClick={e => handleSubmit(e)}>Enviar</button>
