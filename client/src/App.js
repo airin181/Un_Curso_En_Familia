@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import './styles/styles.scss'
 import TagManager from 'react-gtm-module'
 
+
 import { LoginContext } from './context/loginContext';
 import { useState } from 'react';
 
