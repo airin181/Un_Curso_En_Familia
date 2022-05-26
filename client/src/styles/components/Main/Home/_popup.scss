@@ -10,7 +10,7 @@
   @include column-center;
   padding: 1em 2em;
 
-  & input {
+  & #email-dossier-popup {
     width: 17em;
     display: flex;
     flex-direction: row;
@@ -23,7 +23,31 @@
     background: #F5F2ED;
   }
 
-  & input::placeholder, input[type=text]{
+  
+    & #email-dossier-popup::placeholder,
+    input[type=text] {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      display: flex;
+      align-items: center;
+      color: #9C948B;
+      background-image: url('./../../../../assets/envelope2.svg');
+      background-position: 10px 0px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+    }
+  & #checkbox{
+    display: flex;
+    & a{
+      color: #35312E;
+  }
+}
+
+  & .tacbox{
+    flex-direction: row;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -31,29 +55,29 @@
     line-height: 130%;
     display: flex;
     align-items: center;
-    color: #9C948B;
-    background-image: url('./../../../../assets/envelope2.svg');
-    background-position: 10px 0px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
+    color: #35312E;
+
+    & a{
+      color: #35312E;
+    }
   }
 
- /*  & input:focus{
+  /*  & input:focus{
     background-image: url('./../../assets/envelope1.svg');
     background-position: 0px 0px;
     background-repeat: no-repeat;
     padding-left: 40px;
   } */
 
-  & #h3-sent{
+  & #h3-sent {
     margin-bottom: 0;
   }
 
-  & #h3-checkInbox{
+  & #h3-checkInbox {
     margin-top: 0;
   }
 
-  & article{
+  & article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,21 +156,21 @@
   cursor: pointer;
 }
 
-.close-btn:hover{
+.close-btn:hover {
   opacity: 0.4;
 }
 
 
-.error-msg{
+.error-msg {
   color: #E87D7D;
   font-family: $font;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 150%;
-/* identical to box height, or 21px */
-
-display: flex;
-align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  text-align: center;
+  display: flex;
+  align-items: center;
 
 }

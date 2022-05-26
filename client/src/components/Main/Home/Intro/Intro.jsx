@@ -9,7 +9,7 @@ const Intro = () => {
 
   const scrollToNext = () => {
     window.scrollTo({
-      top:(0, 816),
+      top: (0, 816),
       behavior: 'smooth'
     });
   };
@@ -31,12 +31,12 @@ const Intro = () => {
         </div>
       </article>
       <article>
-      <div className="circle-1"></div>
-      <div className="circle-2"></div>
-      <div className="circle-3"></div>
-      <div className="circle-4"></div>
-      <div className="circle-5"></div>
-    </article>
+        <div className="circle-1"></div>
+        <div className="circle-2"></div>
+        <div className="circle-3"></div>
+        <div className="circle-4"></div>
+        <div className="circle-5"></div>
+      </article>
     </article>
 
     <article className="arrow_downward-intro" onClick={scrollToNext}>

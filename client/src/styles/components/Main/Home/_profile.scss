@@ -1,0 +1,70 @@
+@import '../../../utils/mixins.scss';
+@import '../../../utils/variables.scss';
+
+
+  //====================
+  //** Circulos fondo: **
+  //====================
+
+
+
+  .circle-1-profile {
+    background: #FACE9F;
+    border-radius: 50%;
+    height: 11em;
+    width: 11em;
+    position: absolute;
+    left: -85px;
+    top: 90px;
+    z-index: 1;
+  }
+
+  .circle-2-profile {
+    background: #BDD2C2;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    left: -23px;
+    top: 230px;
+    z-index: 1;
+  }
+
+  .circle-3-profile {
+    background: #BDD2C2;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    position: absolute;
+    right: -53px;
+    top: 150px;
+    z-index: 1;
+  }
+
+  .circle-4-profile {
+    background: #FACE9F;
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+    position: absolute;
+    right: -93px;
+    top: 548px;
+    z-index: 1;
+  }
+
+  .circle-5-profile{
+    background: #F0985E;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    right: 3px;
+    top: 529px;
+    z-index: 1;
+  }
+
+
+
+  //====================
+  //** General: **
+  //====================

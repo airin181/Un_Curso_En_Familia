@@ -19,7 +19,7 @@ const Footer = () => {
 
     <section>
       <p className="footer-bold-text">RECIBE NUESTRA NEWSLETTER</p>
-      <input name="email" id="email-dossier" placeholder="Introduce tu email" />
+      <input name="email" id="email-dossier-footer" placeholder="Introduce tu email" />
     </section>
 
     <section className="rrss-icons">
