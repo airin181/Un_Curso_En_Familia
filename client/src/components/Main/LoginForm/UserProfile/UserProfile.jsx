@@ -3,7 +3,7 @@ import React from "react";
 const UserProfile = () => {
   return (
     <section>
-      <article className="user">
+      <article className="user-details">
         <div>
           <img src="" alt="user" className="user__img" />
           <h1 className="user__name">
@@ -18,7 +18,7 @@ const UserProfile = () => {
           <p>Número de miembros</p>
         </div>
       </article>
-      <article className="options">
+      <article className="user-options">
         <div className="options__calendar">
           <img src="" alt="calendario" />
           <h2>Calendario</h2>
