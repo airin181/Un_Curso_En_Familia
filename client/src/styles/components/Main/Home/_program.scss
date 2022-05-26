@@ -86,6 +86,7 @@
     @include column-center;
     margin-top: 2em;
 
+
     & button {
         display: flex;
         flex-direction: row;
@@ -116,6 +117,10 @@
     & button:hover {
         background: #BDD2C2;
       }
+
+    & a {
+        text-decoration: none;
+    }
 
     & .participa-button {
         display: flex;

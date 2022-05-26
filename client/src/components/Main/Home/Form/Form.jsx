@@ -2,6 +2,12 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import family_icon from "../../../../assets/family_restroom.svg";
 import logo from "../../../../assets/logo1.svg"
+
+import progreso1 from "../../../../assets/1.png"
+import progreso2 from "../../../../assets/2.png"
+import progreso3 from "../../../../assets/3.png"
+import progreso4 from "../../../../assets/4.png"
+import progreso5 from "../../../../assets/5.png"
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Form = () => {
@@ -36,7 +42,7 @@ const Form = () => {
                 <div className="firstform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            1 2 3 4 5
+                        <img src={progreso1} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     <div className="firstforminputs">
@@ -68,7 +74,7 @@ const Form = () => {
                 <div className="secondform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            1 2 3 4 5
+                            <img src={progreso2} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     <div className="secondforminputs">
@@ -144,7 +150,7 @@ const Form = () => {
                 <div className="thirdform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            1 2 3 4 5
+                        <img src={progreso3} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     {/*============================================*/}
@@ -191,7 +197,7 @@ const Form = () => {
                 <div className="fourthform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            1 2 3 4 5
+                        <img src={progreso4} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     <div className="fourthforminputs">
@@ -217,7 +223,7 @@ const Form = () => {
                 <div className="fifthform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            1 2 3 4 5
+                        <img src={progreso5} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     <div className="fifthforminputs">

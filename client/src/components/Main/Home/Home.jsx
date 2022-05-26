@@ -10,8 +10,14 @@ import GetInvolved from './GetInvolved/GetInvolved'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import Paula from './../../../assets/paula.jpeg'
-import { textAlign } from "@mui/system";
+import { borderColor, textAlign } from "@mui/system";
 
+
+const colorOption = {
+  backgroundColor:"#fff",
+  fontFamily: 'Poppins',
+  border:"2px solid #F0985E"
+}
 
 const theme = {
   background: '#fff',
@@ -23,9 +29,7 @@ const theme = {
   botFontColor: '#35312E',
   userBubbleColor: '#fff',
   userFontColor: '#35312E',
-  bubbleOptionStyle: {
-  backgroundColor:'#F0985E',
-  },
+
 
   
 };
@@ -140,9 +144,8 @@ const Home = () => {
         cache={true}
         enableSmoothScroll={true}
         floating={true}
-      
         hideUserAvatar={true}
-        
+         bubbleOptionStyle={colorOption}    
         
         />
 
