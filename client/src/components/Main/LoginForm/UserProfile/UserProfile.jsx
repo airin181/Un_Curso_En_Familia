@@ -3,6 +3,11 @@ import { LoginContext } from "../../../../context/loginContext";
 import { Navigate } from "react-router-dom";
 import userImg from "./../../../../assets/userImg.jpg"
 
+import checklist from "./../../../../assets/checklist 1.svg"
+import notebook from "./../../../../assets/notebook 1.svg"
+import pencils from "./../../../../assets/pencils 1.svg"
+import timetable from "./../../../../assets/timetable 1.svg"
+
 const UserProfile = () => {
 
   const { logged, setLogged, user, setUser } = useContext(LoginContext);
@@ -38,19 +43,19 @@ const UserProfile = () => {
 
           <article className="user-options">
             <div className="options__calendar">
-              <img src="" alt="calendario" />
+              <img src={timetable} alt="calendario" />
               <h2>Calendario</h2>
             </div>
             <div className="options__chat">
-              <img src="" alt="chat" />
+              <img src={notebook} alt="chat" />
               <h2>Chat</h2>
             </div>
             <div className="options__tracking">
-              <img src="" alt="seguimiento" />
+              <img src={checklist} alt="seguimiento" />
               <h2>Seguimiento</h2>
             </div>
             <div className="options__settings">
-              <img src="" alt="" />
+              <img src={pencils} alt="ajustes" />
               <h2>Ajustes</h2>
             </div>
           </article>
