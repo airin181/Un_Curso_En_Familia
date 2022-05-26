@@ -2,7 +2,8 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import family_icon from "../../../../assets/family_restroom.svg";
 import logo from "../../../../assets/logo1.svg"
-import progreso1 from "../../../../assets/numbers-progress-1.png"
+
+import progreso1 from "../../../../assets/1.png"
 import progreso2 from "../../../../assets/2.png"
 import progreso3 from "../../../../assets/3.png"
 import progreso4 from "../../../../assets/4.png"
@@ -41,7 +42,7 @@ const Form = () => {
                 <div className="firstform">
                     <div className="logoform"><img src={logo} alt=""/>
                         <div>
-                            <img src={progreso1} alt="barra de progreso" style={{width:"220px"}}/>
+                        <img src={progreso1} alt="barra de progreso" style={{width:"220px"}}/>
                         </div>
                     </div>
                     <div className="firstforminputs">
