@@ -47,7 +47,7 @@ const LoginForm = () => {
           <input className="login__form-textinput" type="password" name="password" autoComplete="on" {...register("password")} placeholder="Password" required />
         </div>
         <p className="login__form-forgot">¿Olvidaste tu contraseña? <a className="login__form-forgot-recover" href="#"> Recuperar </a> </p>
-        <input className="login__form-submit" type="submit" value="Acceder" />
+        <input className="login__form-submit" id="login_submit" type="submit" value="Acceder" />
       </form>
       {handleLoggedState()}
     </>
