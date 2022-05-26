@@ -32,21 +32,21 @@ const Nav = () => {
           !logged
             ? <div className="overlay">
               <ul >
-                <li>
+                <li >
                   <img src={formas1} alt="Forma" style={{ width: "24px" }} />
-                  <p>El programa</p>
+                  <p onClick={()=>setOpen(!isOpen)}>El programa</p>
+                </li>
+                <li >
+                  <img src={formas3} alt="Forma" style={{ width: "24px" }} />
+                  <p onClick={()=>setOpen(!isOpen)}>Testimonios</p>
                 </li>
                 <li>
                   <img src={formas2} alt="Forma" style={{ width: "24px" }} />
-                  <p>Testimonios</p>
-                </li>
-                <li>
-                  <img src={formas3} alt="Forma" style={{ width: "24px" }} />
-                  <Link to='/login' style={{ textDecoration: 'none', color: 'inherit' }}>Área de miembros</Link>
+                  <Link to='/login' style={{ textDecoration: 'none', color: 'inherit' }} onClick={()=>setOpen(!isOpen)}>Área miembros</Link>
                 </li>
                 <li>
                   <img src={formas4} alt="Forma" style={{ width: "24px" }} />
-                  <p>Contacto</p>
+                  <p onClick={()=>setOpen(!isOpen)}>Contacto</p>
                 </li>
               </ul>
             </div>

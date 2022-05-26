@@ -26,10 +26,12 @@ const UserProfile = () => {
                 CURSO 2022/2023
               </h3>
             </div>
+
             <div>
               <p>Colegio Pablo Neruda</p>
               <p>23 miembros</p>
             </div>
+            
           </article>
 
 
