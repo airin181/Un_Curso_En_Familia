@@ -7,6 +7,99 @@
   display: inline-block;
 }
 
+//#goback-button{
+//  display: flex;
+//  flex-direction: row;
+//  justify-content: center;
+//  align-items: flex-start;
+//  padding: 8px 16px;
+//  gap: 8px;
+//
+//  font-family: 'Poppins';
+//  font-style: normal;
+//  font-weight: 600;
+//  font-size: 14px;
+//  line-height: 130%;
+//
+//  width: 135px;
+//  height: 40px;
+//  left: 16px;
+//  top: 736px;
+//
+//  /* Neutros/Neutro 04 */
+//  background: #F5F2ED;
+//  border-radius: 100px;
+//  border: none;
+//
+//  color: #9C948B;
+//}
+//#goforward-button{
+//  flex-direction: row;
+//  justify-content: center;
+//  align-items: flex-start;
+//  align-content: space-between;
+//
+//  padding: 8px 16px;
+//  gap: 8px;
+//
+//  font-family: 'Poppins';
+//  font-style: normal;
+//  font-weight: 600;
+//  font-size: 14px;
+//  line-height: 130%;
+//
+//  width: 135px;
+//  height: 40px;
+//  left: 224px;
+//  top: 736px;
+//
+//  /* Primario/Primario */
+//  background: #F0985E;
+//  border-radius: 100px;
+//  border: none;
+//
+//  color: #FEFEFC;
+//}
+
+.beginningpage {
+  border-style: dotted;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  & > img {
+    width: 166px;
+    height: 40px;
+    left: 105px;
+    top: 240px;
+    margin-bottom: 32px;
+  }
+
+  & > .h1-b {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    /* or 34px */
+    text-align: center;
+    margin: 0px;
+
+    /* Neutros/Neutro 01 */
+    color: #35312E;
+  }
+
+  & > p {
+    font-family: $font;
+  }
+}
+
+
+input[type=text]:focus {
+  border: 3px solid black;
+}
+
 //input[type=radio] {
 //  border: 1px solid #fff;
 //  padding: 0.5em;
@@ -22,11 +115,11 @@ input[type=text], input[type=number] {
   border-radius: 4px;
   box-sizing: border-box;
 }
-#begin-button{
+
+#begin-button, #send-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
   padding: 8px 16px;
   gap: 14px;
 
@@ -40,6 +133,7 @@ input[type=text], input[type=number] {
 
   background: #F0985E;
   border-radius: 100px;
+  border: none;
 
   margin: 1em;
 
@@ -65,86 +159,475 @@ input[type=text], input[type=number] {
   flex-grow: 0;
 
 }
-.beginningpage{
-  height: 100vh;
+
+label.forminputs {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  /* or 21px */
+
+  /* Neutros/Neutro 01 */
+  color: #35312E;
+
 }
 
-//=====================================================
-.firstform label{
-  float: left;
-  margin: 1px;
+input {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  /* or 18px */
+  display: flex;
+  align-items: center;
+
+  /* Neutros/Neutro 01 */
+  color: #35312E;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
+
+
+//=====================================================
 .firstform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: yellow;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-  text-align: right;
-}
-//=====================================================
-.secondform label{
-  float: left;
-  margin: 1px;
-}
-.secondform {
-  height: 100vh;
-  text-align:left;
-  background-color: indianred;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-}
-//=====================================================
-.thirdform label{
-  float: left;
-  margin: 1px;
+
+  & > .logoform {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > img {
+      width: 100px;
+      height: 24px;
+    }
+  }
+
+  & > .firstforminputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > div {
+      width: 90%;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      & > input {
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 0px 12px 12px;
+        gap: 9px;
+
+        width: 325px;
+        height: 48px;
+        left: 16px;
+        top: 208px;
+
+        /* Neutros/Neutro 04 */
+        background: #F5F2ED;
+        /* Secundario/Secundario */
+        border: 1.5px solid #596B61;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+      }
+    }
+  }
 }
 
+//==============================================================
+.secondform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  & > .logoform {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > img {
+      width: 100px;
+      height: 24px;
+    }
+  }
+
+  & > .secondforminputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > h3 {
+      width: 343px;
+      height: 63px;
+      margin: 0px;
+      /* Body 1/Medium Text Semibold */
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: justify;
+      /* or 21px */
+
+      /* Neutros/Neutro 01 */
+      color: #35312E;
+    }
+
+    & > div {
+      width: 90%;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      & > input {
+        text-align: left;
+        //clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      & > label {
+        width: 308px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        /* or 18px */
+        text-align: justify;
+        /* Neutros/Neutro 01 */
+        color: #35312E;
+      }
+    }
+  }
+
+}
+
+//=====================================================
 .thirdform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: mediumaquamarine;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-  text-align: left;
+  border-style: dotted;
+
+  & > .logoform {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > img {
+      width: 100px;
+      height: 24px;
+    }
+  }
+
+  & > .thirdforminputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > div {
+      width: 90%;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      & > input {
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 0px 12px 12px;
+        gap: 9px;
+
+        width: 325px;
+        height: 48px;
+        left: 16px;
+        top: 208px;
+
+        /* Neutros/Neutro 04 */
+        background: #F5F2ED;
+        /* Secundario/Secundario */
+        border: 1.5px solid #596B61;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  & > .thirdformradioinputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > div {
+      width: 90%;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      & > input {
+        text-align: left;
+        //clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      & > label {
+        width: 308px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        /* or 18px */
+        text-align: justify;
+        /* Neutros/Neutro 01 */
+        color: #35312E;
+      }
+    }
+  }
 }
+
 //=====================================================
-.fourthform label{
-  float: left;
-  margin: 1px;
-}
 .fourthform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: mediumpurple;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-  text-align: left;
+  border-style: dotted;
+
+  & > .logoform {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > img {
+      width: 100px;
+      height: 24px;
+    }
+  }
+
+  & > .fourthforminputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > div {
+      width: 90%;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      & > input {
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 0px 12px 12px;
+        gap: 9px;
+
+        width: 325px;
+        height: 48px;
+        left: 16px;
+        top: 208px;
+
+        /* Neutros/Neutro 04 */
+        background: #F5F2ED;
+        /* Secundario/Secundario */
+        border: 1.5px solid #596B61;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+      }
+    }
+  }
 }
+
 //=====================================================
-.fifthform label{
-  float: left;
-  margin: 1px;
-}
 .fifthform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: darkseagreen;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-  text-align: left;
+
+  & > .logoform {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > img {
+      width: 100px;
+      height: 24px;
+    }
+  }
+
+  & > .fifthforminputs {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > h3 {
+      width: 343px;
+      height: 63px;
+      margin: 0px;
+      /* Body 1/Medium Text Semibold */
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: justify;
+      /* or 21px */
+
+      /* Neutros/Neutro 01 */
+      color: #35312E;
+    }
+
+    & > div {
+      width: 90%;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      & > input {
+        text-align: left;
+        //clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      & > label {
+        width: 308px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        /* or 18px */
+        text-align: justify;
+        /* Neutros/Neutro 01 */
+        color: #35312E;
+      }
+      & .doubt{
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 9px;
+
+        width: 337px;
+        height: 198px;
+        left: 16px;
+        top: 506px;
+
+        /* Neutros/Neutro 04 */
+        background: #F5F2ED;
+        /* Secundario/Matices/Secundario 03 */
+        border: 1.5px solid #BDD2C2;
+        border-radius: 8px;
+      }
+    }
+  }
 }
+
 //=====================================================
 .endingpage {
+  border-style: dotted;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: cornflowerblue;
-  display: inline-block;
-  clear: left;
-  width: 348px;
-  text-align: left;
+
+  & > img {
+    width: 166px;
+    height: 40px;
+    left: 105px;
+    top: 240px;
+    margin-bottom: 32px;
+  }
+
+  & > .h1-a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    /* or 34px */
+    text-align: center;
+    margin: 0px;
+
+    /* Neutros/Neutro 01 */
+    color: #35312E;
+  }
+
+  & > p {
+    font-family: $font;
+  }
 }
+
 //=====================================================
+
 .circle-1 {
   background: #FACE9F;
   border-radius: 50%;
@@ -188,6 +671,7 @@ input[type=text], input[type=number] {
   top: 486px;
   z-index: 2;
 }
+
 //=====================================================
 .general-intro {
   background-color: #F5F2ED;;

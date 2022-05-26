@@ -9,12 +9,12 @@ import Form from "./components/Main/Home/Form";
 function App() {
     return (
         <div>
-            <BrowserRouter>
-                <Header/>
-                <Main/>
-                {/* <Form/> */}
-            </BrowserRouter>
-            <Footer/>
+            {/*<BrowserRouter>*/}
+            {/*    <Header/>*/}
+            {/*    <Main/>*/}
+            {/*</BrowserRouter>*/}
+            {/*<Footer/>*/}
+            <Form/>
         </div>
     );
 }
