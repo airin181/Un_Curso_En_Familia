@@ -56,6 +56,10 @@
     display: flex;
     align-items: center;
     color: #35312E;
+
+    & a{
+      color: #35312E;
+    }
   }
 
   /*  & input:focus{
