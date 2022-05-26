@@ -1,7 +1,6 @@
 @import '../../../utils/mixins.scss';
 @import '../../../utils/variables.scss';
 
-
 .login {
     display: flex;
     flex-direction: column;
@@ -59,7 +58,7 @@
         margin: 1em;
         padding: 12 0px;
         background: transparent;
-        background-color: #F5F2ED;
+        background-color: #F5F2ED !important;
         color: #596B61;
         font-family: "Poppins";
         font-style: normal;
@@ -68,7 +67,8 @@
         line-height: 130%;
 
         &:focus {
-            border: 1.5px solid #596B61;
+            border: 1.5px solid #596B61 !important;
+            outline: none;
         }
     }
 

@@ -24,7 +24,7 @@ const Nav = () => {
     <Navigate to='/Home' />
   };
 
-  return(
+  return (
     <>
       <div className="burger-menu">
         <Hamburger toggled={isOpen} toggle={setOpen} id="hamburger-component" distance="sm" color="#35312E" />
@@ -34,36 +34,41 @@ const Nav = () => {
               <ul >
                 <li >
                   <img src={formas1} alt="Forma" style={{ width: "24px" }} />
-                  <p onClick={()=>setOpen(!isOpen)}>El programa</p>
+                  <p onClick={() => setOpen(!isOpen)}>El programa</p>
                 </li>
                 <li >
                   <img src={formas3} alt="Forma" style={{ width: "24px" }} />
-                  <p onClick={()=>setOpen(!isOpen)}>Testimonios</p>
+                  <p onClick={() => setOpen(!isOpen)}>Testimonios</p>
                 </li>
                 <li>
                   <img src={formas2} alt="Forma" style={{ width: "24px" }} />
-                  <Link to='/login' style={{ textDecoration: 'none', color: 'inherit' }} onClick={()=>setOpen(!isOpen)}>Área miembros</Link>
+                  <Link to='/login' style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setOpen(!isOpen)}>Área miembros</Link>
                 </li>
                 <li>
                   <img src={formas4} alt="Forma" style={{ width: "24px" }} />
-                  <p onClick={()=>setOpen(!isOpen)}>Contacto</p>
+                  <p onClick={() => setOpen(!isOpen)}>Contacto</p>
                 </li>
               </ul>
             </div>
             : <div className="overlay-logged">
               <ul>
                 <li>
-                  <img src={formas3} alt="Forma" style={{ width: "24px" }} />
+                  <img src={formas1} alt="Forma" style={{ width: "24px" }} />
                   <p onClick={handleLogout}>Cerrar sesión</p>
+                </li>
+                <li>
+                  <img src={formas3} alt="Forma" style={{ width: "24px" }} />
+                  <Link to='/profile' style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setOpen(!isOpen)}>Área miembros</Link>
                 </li>
               </ul>
             </div>
           : ""}
-        </div>
-        {isOpen ?
-          <div className="dark-bg"></div>
-          : ""}
-      </>
-  )}
+      </div>
+      {isOpen ?
+        <div className="dark-bg"></div>
+        : ""}
+    </>
+  )
+}
 
 export default Nav;
