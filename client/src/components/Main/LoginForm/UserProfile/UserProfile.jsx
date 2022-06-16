@@ -30,12 +30,12 @@ const UserProfile = () => {
               <h3 className="user__year">CURSO 2022/2023</h3>
             </div>
 
-            <div>
-              <div className="user-details-bottom">
+            <div className="user-details-bottom">
+              <div className="user-details-bottom-item">
                 <img src={school} alt="user" className="user__img" />
                 <p>E.I. Pablo Neruda</p>
               </div>
-              <div>
+              <div className="user-details-bottom-item">
                 <img src={members} alt="user" className="user__img" />
                 <p>23 miembros</p>
               </div>

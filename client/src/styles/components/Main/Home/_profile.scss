@@ -69,7 +69,7 @@
   background-color: #F5F2ED;
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 7em;
   z-index: 1;
   justify-content: flex-end;
   align-items: stretch;
@@ -78,14 +78,24 @@
 .user-details-top{
   @include column-center;
     z-index: 2;
-
 }
 
-.user-details-bottom{
 
+.user-details-bottom{
+  @include column-center;
+}
+
+.user-details-bottom-item{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 1em;
+  & img {
+    margin-right: 1em;
+  }
+  & p {
+    margin: 0;
+  }
 }
 
 .circular--landscape{
@@ -110,6 +120,11 @@
     border-radius: 20px;
     flex-direction: column;
     @include wrap-center
+  }
+
+  & div:hover{
+    transform: scale(1.1);
+    cursor: pointer;
   }
 
   & img {
