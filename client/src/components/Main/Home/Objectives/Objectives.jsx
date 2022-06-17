@@ -5,27 +5,20 @@ import illustration1 from './../../../../assets/illustration1.svg';
 import illustration2 from './../../../../assets/illustration2.svg';
 import illustration3 from './../../../../assets/illustration3.svg';
 import illustration4 from './../../../../assets/illustration4.svg';
+import { Link } from 'react-scroll';
 
 const Objectives = () => {
 
 
-//====================
-//** Funciones: **
-//====================
-
-  //flecha que hace scroll hasta la siguiente sección
-  const scrollToNext = () => {
-    window.scrollTo({
-      top:(0, 2448),
-      behavior: 'smooth'
-    });
-  };
+  //====================
+  //** Funciones: **
+  //====================
 
 
 
   return <>
-    <section className="general-objectives">
-      <article style={{width:"100%"}}>
+    <section className="general-objectives" id="objectives">
+      <article style={{ width: "100%" }}>
 
         <div className="title-objectives">
           <figure>
@@ -62,7 +55,9 @@ const Objectives = () => {
 
 
       <article className="arrow_downward-objectives">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
+        <Link activeClass="active" to="testimonies" spy={true} smooth={true} offset={0} duration={500}>
+          <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+        </Link>
       </article>
     </section>
   </>;

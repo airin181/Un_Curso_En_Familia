@@ -8,6 +8,9 @@ import img_video_4 from './../../../../assets/ph4.jpg';
 import screenshot from './../../../../assets/screenshot.png';
 import Card from './Card/Card'
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
+import { Link } from 'react-scroll';
+/* import HorizontalScroll from 'react-scroll-horizontal' */
+
 
 const Testimonies = () => {
 
@@ -25,6 +28,7 @@ const Testimonies = () => {
   //** Funciones: **
   //====================
 
+  const child = { width: `30em`, height: `100%` }
 
 
   //si se hace click en una de las imágenes, el estado video pasa a false y se muestra imagen en grande
@@ -38,14 +42,6 @@ const Testimonies = () => {
     setVideo(true)
     setImage("")
   }
-
-  //flecha que hace scroll hasta la siguiente sección
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: (0, 3264),
-      behavior: 'smooth'
-    });
-  };
 
 
 
@@ -99,7 +95,7 @@ const Testimonies = () => {
 
   //por cada objeto del array (prejuicio) sacamos una Card
   const paintCards = () => {
-    return arrayPrejudices.map((item, i) => <Card data={item} key={i} />)
+    return arrayPrejudices.map((item, i) => <Card data={item} key={i} style={child} />)
   }
 
 
@@ -109,7 +105,7 @@ const Testimonies = () => {
   //====================
 
 
-  return <section className="general-testimonies">
+  return <section className="general-testimonies" id="testimonies">
 
     <article style={{ width: "100%" }}>
 
@@ -140,28 +136,37 @@ const Testimonies = () => {
           <img src={img_video_4} alt="Miniatura video testimonio" onClick={(e) => imageClick(e.target.src)} />
         </div>
         <div className="circular--landscape">
-          <img src={screenshot} onClick={() => handleVideoOnClick()}></img>
+          <img src={screenshot} onClick={() => handleVideoOnClick()} alt="video ASEAF"></img>
         </div>
       </div>
 
-      <div className="link-to-more-info" id="">
+      <div className="link-to-more-info" id="link-to-more-info-testimonies">
         <img src={arrow_circle} alt="Arrow with circle" />
         <a href="" id="know-more-testimonies">Conoce más Testimonios</a>
       </div>
 
+
       <div className="cards-testimonies">
-        <div className="scrolling-wrapper">
-          {paintCards()}
-        </div>
-      
+       
+          <div className="scrolling-wrapper">
+         {/*  <HorizontalScroll> */}
+            {paintCards()}
+          {/*   </HorizontalScroll> */}
+          </div>
+        
+
+        <article className="arrow_downward-testimonies">
+          <Link activeClass="active" to="getinvolved" spy={true} smooth={true} offset={0} duration={500}>
+            <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+          </Link>
+        </article>
+
       </div>
 
 
 
     </article>
-    <article className="arrow_downward-testimonies">
-      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-    </article>
+
 
 
   </section>

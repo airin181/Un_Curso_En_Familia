@@ -3,6 +3,8 @@ import arrow_downward from './../../../../assets/arrow_downward.svg';
 import formas1 from './../../../../assets/formas1.svg';
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 import family_icon from './../../../../assets/family_restroom.svg';
+import {  Link } from "react-router-dom";
+
 
 const GetInvolved = () => {
 
@@ -21,7 +23,7 @@ const GetInvolved = () => {
 
   
   return <>
-    <section className="general-getinvolved">
+    <section className="general-getinvolved" id="getinvolved">
       <article>
 
         <div className="title-getinvolved">
@@ -38,11 +40,12 @@ const GetInvolved = () => {
             <img src={arrow_circle} alt="Arrow with circle" />
           {/*   // eslint-disable-next-line */}
             <a href="#" >Conoce más sobre el proyecto</a>
+            
           </div>
         </div>
 
         <div className="buttons-getinvolved">
-          <button className="participa-button" id="participate-2"><img src={family_icon} alt="Family icon" />¡Participa!</button>
+        <Link to='/form'><button className="participa-button" id="participate-2"><img src={family_icon} alt="Family icon"  />¡Participa!</button></Link>
         </div>
 
           <div className="quote-div">

@@ -15,6 +15,10 @@
   }
 }
 
+.burger-menu > div:first-child:hover {
+opacity: 0.6;
+}
+
 #burger {
   & .burger-menu > div > div:nth-child(1) {
     width: 25px;
@@ -108,3 +112,4 @@
   z-index: 3 !important;
   cursor: pointer;
 }
+
