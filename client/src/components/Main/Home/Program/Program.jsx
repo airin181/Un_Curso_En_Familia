@@ -1,35 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import arrow_downward from './../../../../assets/arrow_downward.svg';
 import formas1 from './../../../../assets/formas1.svg';
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 import family_icon from './../../../../assets/family_restroom.svg';
 import Popup from "./Popup/Popup";
-import {  Link } from "react-router-dom";
-import Form from './../Form'
-import { useRef } from 'react'
+import { Link } from "react-router-dom";
+import { Link as LinkScroll} from 'react-scroll';
 
 const Program = () => {
 
 
 
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: (0, 1632),
-      behavior: 'smooth'
-    });
-  };
-
-  /*   const myRef = useRef(null)
-     const executeScroll = () => scrollToRef(myRef)
-  
-    const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
-    ref={myRef} */
-
-
-
   return <>
-     
-    <section className="general-program">
+
+    <section className="general-program" id="program">
       <article>
 
         <div className="title-program">
@@ -51,18 +35,20 @@ const Program = () => {
 
         <div className="buttons-program">
           <Popup id="download-dossier-1" />
-          <Link to='/form'><button className="participa-button" id="participate-1"><img src={family_icon} alt="Family icon"  />¡Participa!</button></Link>
+          <Link to='/form'><button className="participa-button" id="participate-1"><img src={family_icon} alt="Family icon" />¡Participa!</button></Link>
         </div>
 
       </article>
 
       <article className="arrow_downward-program">
-        <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext}/>
+        <LinkScroll activeClass="active" to="objectives" spy={true} smooth={true} offset={0} duration={500}>
+          <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+        </LinkScroll>
       </article>
     </section>
-   
 
-  
+
+
   </>;
 };
 
