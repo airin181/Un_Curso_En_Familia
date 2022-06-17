@@ -41,7 +41,7 @@ const Program = () => {
       </article>
 
       <article className="arrow_downward-program">
-        <LinkScroll activeClass="active" to="objectives" spy={true} smooth={true} offset={20} duration={500}>
+        <LinkScroll activeClass="active" to="objectives" spy={true} smooth={true} offset={0} duration={500}>
           <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
         </LinkScroll>
       </article>

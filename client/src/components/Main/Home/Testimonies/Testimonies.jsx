@@ -9,6 +9,8 @@ import screenshot from './../../../../assets/screenshot.png';
 import Card from './Card/Card'
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
 import { Link } from 'react-scroll';
+/* import HorizontalScroll from 'react-scroll-horizontal' */
+
 
 const Testimonies = () => {
 
@@ -26,6 +28,7 @@ const Testimonies = () => {
   //** Funciones: **
   //====================
 
+  const child = { width: `30em`, height: `100%` }
 
 
   //si se hace click en una de las imágenes, el estado video pasa a false y se muestra imagen en grande
@@ -39,14 +42,6 @@ const Testimonies = () => {
     setVideo(true)
     setImage("")
   }
-
-  //flecha que hace scroll hasta la siguiente sección
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: (0, 3300),
-      behavior: 'smooth'
-    });
-  };
 
 
 
@@ -100,7 +95,7 @@ const Testimonies = () => {
 
   //por cada objeto del array (prejuicio) sacamos una Card
   const paintCards = () => {
-    return arrayPrejudices.map((item, i) => <Card data={item} key={i} />)
+    return arrayPrejudices.map((item, i) => <Card data={item} key={i} style={child} />)
   }
 
 
@@ -150,14 +145,21 @@ const Testimonies = () => {
         <a href="" id="know-more-testimonies">Conoce más Testimonios</a>
       </div>
 
+
       <div className="cards-testimonies">
-        <div className="scrolling-wrapper">
-          {paintCards()}
-        </div>
+       
+          <div className="scrolling-wrapper">
+         {/*  <HorizontalScroll> */}
+            {paintCards()}
+          {/*   </HorizontalScroll> */}
+          </div>
+        
+
         <article className="arrow_downward-testimonies">
           <Link activeClass="active" to="getinvolved" spy={true} smooth={true} offset={0} duration={500}>
             <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
-          </Link>        </article>
+          </Link>
+        </article>
 
       </div>
 

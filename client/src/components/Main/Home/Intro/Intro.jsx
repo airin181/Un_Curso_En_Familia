@@ -33,7 +33,7 @@ const Intro = () => {
     </article>
 
     <article className="arrow_downward-intro">
-    <Link activeClass="active" to="program" spy={true} smooth={true} offset={20} duration={500}>
+    <Link activeClass="active" to="program" spy={true} smooth={true} offset={0} duration={500}>
       <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
     </Link>
     </article>
