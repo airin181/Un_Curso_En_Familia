@@ -42,7 +42,7 @@ const Testimonies = () => {
   //flecha que hace scroll hasta la siguiente sección
   const scrollToNext = () => {
     window.scrollTo({
-      top: (0, 3264),
+      top: (0, 3350),
       behavior: 'smooth'
     });
   };
@@ -140,11 +140,11 @@ const Testimonies = () => {
           <img src={img_video_4} alt="Miniatura video testimonio" onClick={(e) => imageClick(e.target.src)} />
         </div>
         <div className="circular--landscape">
-          <img src={screenshot} onClick={() => handleVideoOnClick()}></img>
+          <img src={screenshot} onClick={() => handleVideoOnClick()} alt="video ASEAF"></img>
         </div>
       </div>
 
-      <div className="link-to-more-info" id="">
+      <div className="link-to-more-info" id="link-to-more-info-testimonies">
         <img src={arrow_circle} alt="Arrow with circle" />
         <a href="" id="know-more-testimonies">Conoce más Testimonios</a>
       </div>
@@ -153,15 +153,16 @@ const Testimonies = () => {
         <div className="scrolling-wrapper">
           {paintCards()}
         </div>
-      
+        <article className="arrow_downward-testimonies">
+          <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
+        </article>
+
       </div>
 
 
 
     </article>
-    <article className="arrow_downward-testimonies">
-      <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-    </article>
+
 
 
   </section>

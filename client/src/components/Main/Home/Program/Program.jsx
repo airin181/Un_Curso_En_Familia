@@ -51,7 +51,7 @@ const Program = () => {
 
         <div className="buttons-program">
           <Popup id="download-dossier-1" />
-          <Link to='/form'><button className="participa-button" id="participate-1"><img src={family_icon} alt="Family icon"  />¡Participa!</button></Link>
+          <Link to='/form'><button className="participa-button" id="participate-1"><img src={family_icon} alt="Family icon"/>¡Participa!</button></Link>
         </div>
 
       </article>

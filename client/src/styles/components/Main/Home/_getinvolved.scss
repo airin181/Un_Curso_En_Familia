@@ -119,7 +119,7 @@
         background: #BDD2C2;
     }
 
-    & .participa-button {
+     & .participa-button {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -150,6 +150,10 @@
 
     & .participa-button:hover {
         background: #AC522F;
+    } 
+
+    & a {
+        text-decoration: none;
     }
 }
 
