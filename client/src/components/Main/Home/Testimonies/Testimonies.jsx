@@ -8,6 +8,7 @@ import img_video_4 from './../../../../assets/ph4.jpg';
 import screenshot from './../../../../assets/screenshot.png';
 import Card from './Card/Card'
 import arrow_circle from './../../../../assets/arrow_circle_down.svg';
+import { Link } from 'react-scroll';
 
 const Testimonies = () => {
 
@@ -42,7 +43,7 @@ const Testimonies = () => {
   //flecha que hace scroll hasta la siguiente sección
   const scrollToNext = () => {
     window.scrollTo({
-      top: (0, 3350),
+      top: (0, 3300),
       behavior: 'smooth'
     });
   };
@@ -109,7 +110,7 @@ const Testimonies = () => {
   //====================
 
 
-  return <section className="general-testimonies">
+  return <section className="general-testimonies" id="testimonies">
 
     <article style={{ width: "100%" }}>
 
@@ -154,8 +155,9 @@ const Testimonies = () => {
           {paintCards()}
         </div>
         <article className="arrow_downward-testimonies">
-          <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" onClick={scrollToNext} />
-        </article>
+          <Link activeClass="active" to="getinvolved" spy={true} smooth={true} offset={0} duration={500}>
+            <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+          </Link>        </article>
 
       </div>
 

@@ -10,7 +10,7 @@
     height: 816px;
     justify-content: center;
     align-content: center;
-    margin-top: 5em;
+    margin-top: 2em;
 
 }
 
@@ -48,16 +48,17 @@
 
 .video-container {
     position: relative;
-    width: 100%;
+    width: 94%;
     display: flex;
     overflow: hidden;
     justify-content: center;
+    margin-left: 3%;
 }
 
 #youtube-video{
     width: 100%;
     max-width: 500px;
-    height: 280px;
+    height: 250px;
 }
 
 .responsive-iframe {

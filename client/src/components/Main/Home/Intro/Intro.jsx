@@ -1,18 +1,11 @@
 import React from "react";
 import arrow_downward from './../../../../assets/arrow_downward.svg';
 import logo from './../../../../assets/Logo.svg';
+import {Link} from 'react-scroll';
 
 
 const Intro = () => {
 
-
-
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: (0, 816),
-      behavior: 'smooth'
-    });
-  };
 
 
   return <section className="general-intro">
@@ -39,8 +32,10 @@ const Intro = () => {
       </article>
     </article>
 
-    <article className="arrow_downward-intro" onClick={scrollToNext}>
+    <article className="arrow_downward-intro">
+    <Link activeClass="active" to="program" spy={true} smooth={true} offset={20} duration={500}>
       <img src={arrow_downward} alt="Arrow scroll down" className="arrow_downward" />
+    </Link>
     </article>
 
   </section>;

@@ -23,7 +23,7 @@ const GetInvolved = () => {
 
   
   return <>
-    <section className="general-getinvolved">
+    <section className="general-getinvolved" id="getinvolved">
       <article>
 
         <div className="title-getinvolved">
