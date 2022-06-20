@@ -1,3 +1,5 @@
-# vincula
-Final crew challenge
-Full Stack Web project for the Un Curso En Familia course from ASEAF.
+# Un Curso en Familia
+
+Full Stack Web project for the Un Curso En Familia initiative by ASEAF.
+
+Check it out ➡️ https://vincula-front.herokuapp.com/
