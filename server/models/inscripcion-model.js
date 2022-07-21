@@ -9,11 +9,11 @@ const objectSchema = {
     previouscontact: String,
     numpeople: String,
     havesons: String,
-    agesex: Number,
+    agesex: String,
     age: Number,
     relationship: String,
-    proyectknowledge:String,
-    doubt:String
+    proyectknowledge: String,
+    doubt: String
 
 }
 
