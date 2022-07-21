@@ -26,6 +26,12 @@
     flex-wrap: wrap;
 }
 
+@mixin error-msg{
+    color: #E87D7D;
+    font-size: 10px;
+    font-family: $font;
+}
+
 
 
 //FONTS

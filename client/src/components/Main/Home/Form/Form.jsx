@@ -9,7 +9,6 @@ import progreso2 from "../../../../assets/2.png"
 import progreso3 from "../../../../assets/3.png"
 import progreso4 from "../../../../assets/4.png"
 import progreso5 from "../../../../assets/5.png"
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Form = () => {
 
@@ -19,6 +18,7 @@ const Form = () => {
 
     //STEP FORM:
     const [formStep, setFormStep] = React.useState(0)
+
 
     const completeFormStep = () => {
         setFormStep(current => current + 1)
@@ -30,26 +30,32 @@ const Form = () => {
 
 
     //SUBMIT:
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm({ mode: "all" });
+   const radioOption = watch()
+    console.log(radioOption)
 
-    const onSubmit = async (data, e) => {
-        // console.log(data)
+    const submitForm = (values, e) => {
+        window.alert(JSON.stringify(values,null,2))
+
         e.preventDefault();
         fetch('http://localhost:5000/api/create', {
             method: 'POST',
-            body: JSON.stringify(data),
+            body: JSON.stringify(values),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
+
+        completeFormStep()
+
     }
 
 
     return (
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(submitForm)}>
             <div>
 
                 {formStep === 0 && (
@@ -72,31 +78,64 @@ const Form = () => {
                         <div className="firstforminputs">
                             <div>
                                 <label className="forminputs">Nombre y apellidos*</label>
-                                <input type="text" {...register("namesur", { minLength: 3 })} placeholder="Nombre y Apellidos" required className="input-form" />
-                                {/*<FontAwesomeIcon icon="fa-thin fa-envelope" />*/}
+                                <input
+                                    type="text"
+                                    name="namesur"
+                                    {...register("namesur", { required: { value: true, message: "Por favor, introduce un nombre y apellido" } })}
+                                    placeholder="Nombre y apellidos"
+                                    className="input-form" />
+                                {errors.namesur && <p className="error-msg">{errors.namesur.message}</p>}
+
                             </div>
                             <div>
-                                <label className="forminputs">Email*</label>
-                                <input type="text" name="email" {...register("email", { pattern: /[A-Za-z]{3}/ })} placeholder="correo@email.com"
-                                    required className="input-form" />
+                                <label className="forminputs">E-mail*</label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    {...register("email", { required: { value: true, message: "Por favor, introduce un e-mail" }, pattern: /[A-Za-z]{3}/ })}
+                                    placeholder="correo@email.com"
+                                    className="input-form" />
+                                {errors.email && <p className="error-msg">{errors.email.message}</p>}
                             </div>
                             <div>
                                 <label className="forminputs">Teléfono de contacto*</label>
-                                <input type="number" {...register("telephone", { valueAsNumber: true, minLength: 9, maxLength: 11 })} placeholder="600 000 000" required className="input-form" />
+                                <input
+                                    type="number"
+                                    {...register("telephone", { valueAsNumber: true, minLength: 9, maxLength: 11, required: { value: true, message: "Por favor, introduce un teléfono de contacto" } })}
+                                    placeholder="600 000 000" className="input-form" />
+                                {errors.telephone && <p className="error-msg">{errors.telephone.message}</p>}
                             </div>
                             <div>
                                 <label className="forminputs">Dirección*</label>
-                                <input type="text" {...register("address")} placeholder="address" required className="input-form" />
+                                <input
+                                    type="text"
+                                    {...register("address", { required: { value: true, message: "Por favor, introduce una dirección" } })}
+                                    placeholder="Dirección"
+                                    className="input-form" />
+                                {errors.address && <p className="error-msg">{errors.address.message}</p>}
                             </div>
                             <div>
                                 <label className="forminputs">Código Postal*</label>
-                                <input type="number" {...register("postalcode", { valueAsNumber: true, minLength: 5 })} placeholder="postalcode" required className="input-form" />
+
+                                <input
+                                    type="number"
+                                    {...register("postalcode", { valueAsNumber: true, minLength: 5, required: { value: true, message: "Por favor, introduce un código postal" } })}
+                                    placeholder="Código postal" className="input-form" />
+
+                                {errors.postalcode && <p className="error-msg">{errors.postalcode.message}</p>}
                             </div>
                         </div>
                         <div className="form-buttons-div">
-                            <button className="form-button-back" onClick={backFormStep}>Atrás</button>
-                            <button className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
+                            <button
+                                className="form-button-back"
+                                onClick={backFormStep}>Atrás</button>
+
+                            <button
+                                disabled={!isValid}
+                                className="form-button-orange"
+                                onClick={completeFormStep}>Siguiente</button>
                         </div>
+
 
                     </div>
                 )}
@@ -109,21 +148,24 @@ const Form = () => {
                         </div>
 
                         <div className="secondforminputs">
-                            <h3>¿Has tenido contacto previo con niños, o addolescentes bajo medidas de protección?</h3>
+                            <h3>¿Has tenido contacto previo con niños o adolescentes bajo medidas de protección?</h3>
                             <div>
-                                <label className="formradios">Soy una familia acogedora con idoneidad</label>
+                                <label className="formradios" htmlFor="radio1">Soy una familia acogedora con idoneidad</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="Famila de acogida idónea"
-                                    className="input-form" />
+                                    className="input-form"
+                                    id="radio1"/>
+                                
+
                             </div>
                             <div>
                                 <label className="formradios">He sido familia acogedora con idoneidad hace tiempo</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="He sido familia acogedora con idoneidad hace tiempo"
                                     className="input-form" />
@@ -131,8 +173,8 @@ const Form = () => {
                             <div>
                                 <label className="formradios">He participado en programas de acogimiento vacacional</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="He participado en programas de acogimiento vacacional"
                                     className="input-form" />
@@ -141,8 +183,8 @@ const Form = () => {
                                 <label htmlFor="contactbefore" className="formradios">Conozco el acogimiento familiar a
                                     través de personas de mi entorno que han acogido</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="Conozco el acogimiento familiar a través de personas de mi entorno que han acogido"
                                     className="input-form" />
@@ -150,8 +192,8 @@ const Form = () => {
                             <div>
                                 <label className="formradios">Colaboro como voluntario/a en una residencia infantil</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="Colaboro como voluntario/a en una residencia infantil"
                                     className="input-form" />
@@ -160,8 +202,8 @@ const Form = () => {
                                 <label className="formradios">He participado en programas y actividades puntuales con
                                     menores en acogimiento residencial</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="He participado en programas y actividades puntuales con menores en acogimiento residencial"
                                     className="input-form" />
@@ -169,16 +211,17 @@ const Form = () => {
                             <div>
                                 <label className="formradios">No he tenido contacto previo</label>
                                 <input
-                                    {...register("previouscontact", { required: true })}
-                                    name="contactbefore"
+                                    {...register("previouscontact", {required: {value: true, message:"Por favor, marca una opción"}})}
+                                    name="previouscontact"
                                     type="radio"
                                     value="No he tenido contacto previo"
                                     className="input-form" />
                             </div>
                         </div>
+                        {errors.contactbefore && <p className="error-msg">{errors.contactbefore.message}</p>}
                         <div className="form-buttons-div">
                             <button className="form-button-back" onClick={backFormStep}>Atrás</button>
-                            <button className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
+                            <button disabled={!isValid} className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
                         </div>
                     </div>
                 )}
@@ -204,7 +247,7 @@ const Form = () => {
                                 <label>Si</label>
                                 <input
                                     {...register("havesons")}
-                                    name="sons"
+                                    name="havesons"
                                     type="radio"
                                     value="si"
                                     className="input-form" />
@@ -213,7 +256,7 @@ const Form = () => {
                                 <label>No</label>
                                 <input
                                     {...register("havesons")}
-                                    name="sons"
+                                    name="havesons"
                                     type="radio"
                                     value="no"
                                     className="input-form" />
@@ -222,15 +265,17 @@ const Form = () => {
                         {/*============================================*/}
                         <div className="thirdforminputs">
                             <div>
-                                <label>Si procede, edad y sexo/género de los niños/as o adolescentes que forman parte de tu
-                                    núcleo
-                                    de convivencia</label>
-                                <input type="number" {...register("agesex", { valueAsNumber: true })} placeholder="10 años, mujer" required className="input-form" />
+                                <label>Si procede, edad y sexo/género de los niños/as o adolescentes que forman parte de tu núcleo de convivencia</label>
+                                <input 
+                                type="number" 
+                                {...register("agesex")} 
+                                placeholder="10 años, mujer"
+                                className="input-form" />
                             </div>
                         </div>
                         <div className="form-buttons-div">
                             <button className="form-button-back" onClick={backFormStep}>Atrás</button>
-                            <button className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
+                            <button disabled={!isValid} className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
                         </div>
                     </div>
                 )}
@@ -262,7 +307,7 @@ const Form = () => {
                         </div>
                         <div className="form-buttons-div">
                             <button className="form-button-back" onClick={backFormStep}>Atrás</button>
-                            <button className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
+                            <button disabled={!isValid} className="form-button-orange" onClick={completeFormStep}>Siguiente</button>
                         </div>
                     </div>
                 )}
@@ -280,7 +325,7 @@ const Form = () => {
                                     Natalidad</label>
                                 <input
                                     {...register("proyectknowledge")}
-                                    name="knowledge"
+                                    name="proyectknowledge"
                                     type="radio"
                                     value="Dirección General de Infancia, Familias y fomento de la Natalidad"
                                     className="input-form" />
@@ -289,7 +334,7 @@ const Form = () => {
                                 <label className="formradios">ASEAF</label>
                                 <input
                                     {...register("proyectknowledge")}
-                                    name="knowledge"
+                                    name="proyectknowledge"
                                     type="radio"
                                     value="ASEAF"
                                     className="input-form" />
@@ -299,7 +344,7 @@ const Form = () => {
                                 <label className="formradios">Familias Para la Acogida</label>
                                 <input
                                     {...register("proyectknowledge")}
-                                    name="knowledge"
+                                    name="proyectknowledge"
                                     type="radio"
                                     value="Familias Para la Acogida"
                                     className="input-form" />
@@ -308,7 +353,7 @@ const Form = () => {
                                 <label className="formradios">ADAMCAM</label>
                                 <input
                                     {...register("proyectknowledge")}
-                                    name="knowledge"
+                                    name="proyectknowledge"
                                     type="radio"
                                     value="ADAMCAM"
                                     className="input-form" />
@@ -317,7 +362,7 @@ const Form = () => {
                                 <label className="formradios">Fundación Soñar Despierto</label>
                                 <input
                                     {...register("proyectknowledge")}
-                                    name="knowledge"
+                                    name="proyectknowledge"
                                     type="radio"
                                     value="Fundación Soñar Despierto"
                                     className="input-form" />
@@ -325,10 +370,15 @@ const Form = () => {
 
                             <h3>¿Tienes alguna duda concreta sobre el proyecto?</h3>
                             <div>
-                                <input className="doubt" type="text" {...register("doubt")} placeholder="Escribe aquí..." required />
+                                <input
+                                className="doubt"
+                                type="text"
+                                {...register("doubt")}
+                                placeholder="Escribe aquí..."
+                                name="doubt" />
                             </div>
                         </div>
-                        <input type="submit" id="send-button" className="form-button-orange" onClick={completeFormStep} value="Finalizar" />
+                        <input disabled={!isValid} type="submit" id="send-button" className="form-button-orange" value="Finalizar" />
                     </div>
 
                 )}
@@ -338,14 +388,14 @@ const Form = () => {
                         <h1 className="h1-a">¡Solicitud completada con éxito!</h1>
                         <p>Nos pondremos en contacto contigo cuando revisemos la solicitud</p>
                         <h3>¡Gracias por implicarte!</h3>
-                        <Link to='/'>
+                        <Link to='/' id="end-form-button">
                             <button id="begin-button" className="form-button-orange">Salir</button>
 
                         </Link>
                     </div>
                 )}
             </div>
-
+            <pre>{JSON.stringify(watch(), null, 2)}</pre>
         </form>
     )
         ;
