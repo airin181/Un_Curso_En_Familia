@@ -35,11 +35,14 @@ const Form = () => {
     console.log(radioOption)
 
     const submitForm = (values, e) => {
+
         window.alert(JSON.stringify(values,null,2))
 
         e.preventDefault();
-        fetch('http://localhost:5000/api/create', {
+
+        fetch('http://localhost:5000/create', {
             method: 'POST',
+
             body: JSON.stringify(values),
             headers: {
                 'Content-Type': 'application/json'
@@ -51,6 +54,7 @@ const Form = () => {
         completeFormStep()
 
     }
+
 
 
     return (
