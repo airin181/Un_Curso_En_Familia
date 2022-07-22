@@ -107,7 +107,8 @@ const resetPassword = async (req, res) => {
 userControllers = {
     createUser,
     loginUser,
-    logoutUser/* ,
+    logoutUser
+    /* ,
     recoverPassword,
     resetPassword */
 };

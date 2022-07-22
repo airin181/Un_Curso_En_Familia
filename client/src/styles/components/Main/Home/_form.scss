@@ -1,65 +1,6 @@
 @import '../../../utils/mixins.scss';
 @import '../../../utils/variables.scss';
 
-.formulario {
-  
-  text-align: center;
-  display: inline-block;
-}
-
-//#goback-button{
-//  display: flex;
-//  flex-direction: row;
-//  justify-content: center;
-//  align-items: flex-start;
-//  padding: 8px 16px;
-//  gap: 8px;
-//
-//  font-family: 'Poppins';
-//  font-style: normal;
-//  font-weight: 600;
-//  font-size: 14px;
-//  line-height: 130%;
-//
-//  width: 135px;
-//  height: 40px;
-//  left: 16px;
-//  top: 736px;
-//
-//  /* Neutros/Neutro 04 */
-//  background: #F5F2ED;
-//  border-radius: 100px;
-//  border: none;
-//
-//  color: #9C948B;
-//}
-//#goforward-button{
-//  flex-direction: row;
-//  justify-content: center;
-//  align-items: flex-start;
-//  align-content: space-between;
-//
-//  padding: 8px 16px;
-//  gap: 8px;
-//
-//  font-family: 'Poppins';
-//  font-style: normal;
-//  font-weight: 600;
-//  font-size: 14px;
-//  line-height: 130%;
-//
-//  width: 135px;
-//  height: 40px;
-//  left: 224px;
-//  top: 736px;
-//
-//  /* Primario/Primario */
-//  background: #F0985E;
-//  border-radius: 100px;
-//  border: none;
-//
-//  color: #FEFEFC;
-//}
 
 .beginningpage {
 
@@ -118,20 +59,26 @@ input[type=text], input[type=number] {
   box-sizing: border-box;
 }
 
-#begin-button, #send-button {
+.form-buttons-div{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 8px 16px;
-  gap: 14px;
+  width: 90%;
+  justify-content: space-between;
+  
+}
 
+.form-button-orange {
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+padding: 8px 16px;
+gap: 8px;
+cursor: pointer;
 
-  width: 214px;
-  height: 40px;
-  left: 80px;
-  top: 1456px;
-
-  /* Primario/Primario */
+width: 135px;
+height: 40px;
+left: 16px;
+top: 736px;
 
   background: #F0985E;
   border-radius: 100px;
@@ -144,23 +91,31 @@ input[type=text], input[type=number] {
   font-weight: 600;
   font-size: 14px;
   line-height: 130%;
-  /* or 18px */
 
   display: flex;
   align-items: center;
 
-  /* Neutros/Neutro 05 */
-
   color: #FEFEFC;
-
-
-  /* Inside auto layout */
 
   flex: none;
   order: 1;
   flex-grow: 0;
 
 }
+
+.form-button-orange:disabled{
+  background: #9C948B;
+  color: white;
+  cursor: not-allowed
+}
+
+.form-button-back{
+  @extend .form-button-orange;
+  background: #F5F2ED;
+  color: #9C948B;
+
+}
+
 
 label.forminputs {
   font-family: 'Poppins';
@@ -175,26 +130,6 @@ label.forminputs {
 
 }
 
-.input-form {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-  /* or 18px */
-  display: flex;
-  align-items: center;
-
-  /* Neutros/Neutro 01 */
-  color: #35312E;
-
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
 
 //=====================================================
 .firstform {
@@ -202,7 +137,8 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
+
 
   & > .logoform {
     width: 100%;
@@ -220,17 +156,18 @@ label.forminputs {
   }
 
   & > .firstforminputs {
-    height: 80%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
     width: 100%;
 
     & > div {
-      width: 90%;
       text-align: left;
       margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
 
       & > input {
         box-sizing: border-box;
@@ -264,7 +201,7 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
 
   & > .logoform {
     width: 100%;
@@ -341,7 +278,7 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
 
 
   & > .logoform {
@@ -439,7 +376,7 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
 
 
   & > .logoform {
@@ -502,7 +439,7 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
 
   & > .logoform {
     width: 100%;
@@ -600,7 +537,7 @@ label.forminputs {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 816px;
+  margin-top: 5em;
 
   & > img {
     width: 166px;
@@ -629,6 +566,9 @@ label.forminputs {
   }
 }
 
+#end-form-button{
+  text-decoration: none;
+}
 
 //=====================================================
 .general-form {
