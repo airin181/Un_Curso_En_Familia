@@ -45,7 +45,7 @@ const GetInvolved = () => {
         </div>
 
         <div className="buttons-getinvolved">
-        <Link to='/form'><button className="participa-button" id="participate-2"><img src={family_icon} alt="Family icon"  />¡Participa!</button></Link>
+        <Link to='/form'><button className="participa-button" id="participate-2"><img src={family_icon} alt="Family icon"/>¡Participa!</button></Link>
         </div>
 
           <div className="quote-div">
