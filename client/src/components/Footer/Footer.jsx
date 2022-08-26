@@ -12,9 +12,9 @@ const Footer = () => {
 
     <section className="footer-text">
       <p className="footer-bold-text">CONTACTA CON NOSOTROS</p>
-      <p className="footer-small-text" id="email">aseaf@aseaf.org</p>
+      <a href="mailto:aseaf@aseaf.org" className="footer-small-text" id="email">aseaf@aseaf.org</a>
       <a href="tel:+34633738461" className="footer-small-text" id="telephone">+ 34 633 738 461</a>
-      <a href="www.aseaf.org" className="footer-small-text" id="web-address">www.aseaf.org</a>
+      <a href="https://s829792836.websitebuilder.online/" className="footer-small-text" id="web-address" target="_blank">www.aseaf.org</a>
     </section>
 
     <section>
@@ -25,7 +25,7 @@ const Footer = () => {
     <section className="rrss-icons">
       
       <a href="https://www.facebook.com/Aseaf_isn-107303130672570/" id="facebook"><img src={facebook} alt="Facebook icon" style={{width:"24px"}} /></a>
-      <a href="https://www.linkedin.com/" id="linkedin"><img src={linkedin} alt="Linkedin icon" style={{width:"24px"}}/></a>
+      <a href="https://www.linkedin.com/company/aseaf-asociaci%C3%B3n-estatal-de-acogimiento-familiar/" id="linkedin"><img src={linkedin} alt="Linkedin icon" style={{width:"24px"}}/></a>
       <a href="https://twitter.com/aseaf_isn" id="twitter"><img src={twitter} alt="Twitter icon" style={{width:"24px"}}/></a>
       <a href="https://www.youtube.com/channel/UCeSmi5FQ15mRUFxNj97eQQw" id="youtube"><img src={youtube} alt="Youtube icon" style={{width:"24px"}}/></a>
       

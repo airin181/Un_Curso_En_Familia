@@ -26,7 +26,7 @@
     flex-wrap: wrap;
 }
 
-@mixin error-msg{
+@mixin error-msg {
     color: #E87D7D;
     font-size: 10px;
     font-family: $font;
@@ -93,12 +93,69 @@
 
 @mixin body2-s {
 
-font-family: $font;
-font-size: 14px;
-font-weight: 400;
-line-height: 21px;
-letter-spacing: 0em;
-text-align: left;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
 
+}
+
+
+
+// INPUTS >>> PLACEHOLDER + FOCUS + valid
+
+input[type=text]::placeholder,
+input[type=number]::placeholder, textarea::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    color: #9C948B;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+input[type=text],
+input[type=number] {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 9px;
+    width: 343px;
+    height: 48px;
+    background: #F5F2ED;
+    border: 1.5px solid #BDD2C2;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+textarea{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 9px;
+    background: #F5F2ED;
+    border: 1.5px solid #BDD2C2;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+    border: 1.5px solid #E87D7D !important;
 }
 
