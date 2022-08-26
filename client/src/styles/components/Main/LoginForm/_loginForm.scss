@@ -6,8 +6,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 22vh;
-    margin-bottom: 7vh;
+    margin-top: 19vh;
+    margin-bottom: 5vh;
 
     &__title {
         font-family: "Poppins", sans-serif;
@@ -31,7 +31,6 @@
 .login__form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30vh;
     align-items: center;
     
     &-label{
@@ -74,30 +73,50 @@
     }
 
     & input[type=email] {
-        background-image: url("../../../../assets/envelope1.svg");
+        background-image: url("../../../../assets/envelope2.svg");
         background-repeat: no-repeat;
         background-position: 10px 15px;
         padding-left: 40px;
         position: relative;
     }
+
+    & input[type=email]:focus {
+        background-image: url("../../../../assets/envelope1.svg");
+    }
+
+    & input[type=email]:valid {
+        background-image: url("../../../../assets/envelope1.svg");
+        border: 1.5px solid #596B61;
+    }
     & input[type=password] {
-        background-image: url('./../../../../assets/password.svg');
+        background-image: url('./../../../../assets/password2.svg');
         background-position: 10px 15px;
         background-repeat: no-repeat;
         padding-left: 40px;
         position: relative;
+    }
+    & input[type=password]:focus {
+        background-image: url('./../../../../assets/password.svg');
+        
+    }
+    & input[type=password]:valid {
+        background-image: url('./../../../../assets/password.svg');
+        border: 1.5px solid #596B61;
     }
 
     &-forgot {
         font-family: "Poppins";
         margin-top: 0px;
-        margin-left: 12px;
-        font-size: 10px;
+        
+        font-size: 12px;
         color: #090C1F;
+        
+        font-weight: 400;
 
         &-recover{
             text-decoration: none;
             color: #F0985E;
+            font-weight: 600;
         }
     }
 
@@ -112,7 +131,7 @@
         gap: 8px;
         align-self: center;
         font-family: "Poppins";
-        font-weight: 500;
+        font-weight: 600;
         color: #F5F2ED;
 
         &:active {
