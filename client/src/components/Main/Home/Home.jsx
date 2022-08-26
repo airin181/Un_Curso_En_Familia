@@ -5,6 +5,7 @@ import Program from './Program/Program'
 import Testimonies from './Testimonies/Testimonies'
 import GetInvolved from './GetInvolved/GetInvolved'
 
+import Footer from '../../Footer/Footer';
 
 
 import ChatBot from 'react-simple-chatbot';
@@ -150,6 +151,7 @@ const Home = () => {
         />
 
     </ThemeProvider>
+    <Footer />
   </>
 };
 
