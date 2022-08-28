@@ -2,4 +2,4 @@
 
 Full Stack Web project for the Un Curso En Familia initiative by ASEAF.
 
-Check it out ➡️ [https://vincula-front.herokuapp.com/](https://uncursoenfamilia.herokuapp.com/)
+Check it out ➡️ https://uncursoenfamilia.herokuapp.com/
